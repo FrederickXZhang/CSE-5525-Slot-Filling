@@ -1,0 +1,42 @@
+Input at line: 203 ['at', 'the', 'charlotte', 'airport', 'how', 'many', 'different', 'types', 'of', 'aircraft', 'are', 'there', 'for', 'us', 'air']
+G_I: atis_city
+P_I: atis_meal
+G_S: ['O', 'O', 'B-city_name', 'I-city_name', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'B-airline_name', 'I-airline_name']
+P_S: ['O', 'O', 'B-airport_name', 'I-airport_name', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'B-airline_name', 'I-airline_name']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 230 ['list', 'the', 'airfare', 'for', 'american', 'airlines', 'flight', '0', 'from', 'jfk', 'to', '_UNK']
+G_I: _UNK
+P_I: atis_airfare
+G_S: ['O', 'O', 'O', 'O', 'B-airline_name', 'I-airline_name', 'O', 'B-flight_number', 'O', 'B-fromloc.airport_code', 'O', 'B-toloc.airport_code']
+P_S: ['O', 'O', 'O', 'O', 'B-airline_name', 'I-airline_name', 'O', 'B-flight_number', 'O', 'B-fromloc.airport_code', 'O', 'O']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 502 ['list', 'airports', 'in', 'arizona', 'nevada', 'and', 'california', 'please']
+G_I: atis_capacity
+P_I: atis_distance
+G_S: ['O', 'O', 'O', 'B-state_name', '_UNK', 'O', 'B-state_name', 'O']
+P_S: ['O', 'O', 'O', 'B-mod', 'B-city_name', 'O', 'B-toloc.state_name', 'O']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 630 ['list', 'la']
+G_I: atis_distance
+P_I: atis_flight
+G_S: ['O', 'B-city_name']
+P_S: ['O', 'B-toloc.city_name']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 631 ['list', 'la']
+G_I: atis_distance
+P_I: atis_flight
+G_S: ['O', 'B-city_name']
+P_S: ['O', 'B-toloc.city_name']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 741 ['are', '_UNK', 'served', 'on', 'tower', 'air']
+G_I: atis_flight_no
+P_I: atis_flight
+G_S: ['O', 'B-meal_description', 'O', 'O', 'B-airline_name', 'I-airline_name']
+P_S: ['O', 'O', 'O', 'O', 'B-airline_name', 'I-airline_name']
+------------------------------------------------------------------------------------------------------
+

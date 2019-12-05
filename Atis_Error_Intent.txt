@@ -1,0 +1,114 @@
+Input at line: 13 ['show', 'flight', 'and', 'prices', 'kansas', 'city', 'to', 'chicago', 'on', 'next', 'wednesday', 'arriving', 'in', 'chicago', 'by', '0', 'pm']
+G_I: atis_aircraft
+P_I: atis_flight
+P_S: ['O', 'O', 'O', 'O', 'B-fromloc.city_name', 'I-fromloc.city_name', 'O', 'B-toloc.city_name', 'O', 'B-depart_date.date_relative', 'B-depart_date.day_name', 'O', 'O', 'B-toloc.city_name', 'B-arrive_time.time_relative', 'B-arrive_time.time', 'I-arrive_time.time']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 35 ['what', 'day', 'of', 'the', 'week', 'do', 'flights', 'from', 'nashville', 'to', 'tacoma', 'fly', 'on']
+G_I: _UNK
+P_I: atis_flight
+P_S: ['O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'B-fromloc.city_name', 'O', 'B-toloc.city_name', 'O', 'O']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 37 ['what', 'days', 'of', 'the', 'week', 'do', 'flights', 'from', 'san', 'jose', 'to', 'nashville', 'fly', 'on']
+G_I: _UNK
+P_I: atis_flight
+P_S: ['O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'B-fromloc.city_name', 'I-fromloc.city_name', 'O', 'B-toloc.city_name', 'O', 'O']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 139 ['what', 'are', 'the', 'fares', 'for', 'ground', 'transportation', 'in', 'denver']
+G_I: atis_flight_time
+P_I: atis_airline
+P_S: ['O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'B-city_name']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 406 ['i', 'need', 'a', 'round', 'trip', 'flight', 'from', 'san', 'diego', 'to', 'washington', 'dc', 'and', 'the', 'fares']
+G_I: atis_aircraft
+P_I: atis_flight
+P_S: ['O', 'O', 'O', 'B-round_trip', 'I-round_trip', 'O', 'O', 'B-fromloc.city_name', 'I-fromloc.city_name', 'O', 'B-toloc.city_name', 'B-toloc.state_code', 'O', 'O', 'O']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 407 ['i', 'need', 'a', 'round', 'trip', 'from', 'atlanta', 'to', 'washington', 'dc', 'and', 'the', 'fares', 'leaving', 'in', 'the', 'morning']
+G_I: atis_aircraft
+P_I: atis_flight
+P_S: ['O', 'O', 'O', 'B-round_trip', 'I-round_trip', 'O', 'B-fromloc.city_name', 'O', 'B-toloc.city_name', 'B-toloc.state_code', 'O', 'O', 'O', 'O', 'O', 'O', 'B-depart_time.period_of_day']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 408 ['i', 'need', 'a', 'round', 'trip', 'from', 'phoenix', 'to', 'washington', 'dc', 'and', 'the', 'fare', 'leaving', 'in', 'the', 'morning']
+G_I: atis_aircraft
+P_I: atis_flight
+P_S: ['O', 'O', 'O', 'B-round_trip', 'I-round_trip', 'O', 'B-fromloc.city_name', 'O', 'B-toloc.city_name', 'B-toloc.state_code', 'O', 'O', 'O', 'O', 'O', 'O', 'B-depart_time.period_of_day']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 493 ['i', 'need', 'flight', 'and', 'airline', 'information', 'for', 'a', 'flight', 'from', 'denver', 'to', 'salt', 'lake', 'city', 'on', 'monday', 'departing', 'after', '0', 'pm']
+G_I: _UNK
+P_I: atis_flight
+P_S: ['O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'B-fromloc.city_name', 'O', 'B-toloc.city_name', 'I-toloc.city_name', 'I-toloc.city_name', 'O', 'B-depart_date.day_name', 'O', 'B-depart_time.time_relative', 'B-depart_time.time', 'I-depart_time.time']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 499 ['i', 'need', 'flight', 'and', 'fare', 'information', 'departing', 'from', 'oakland', 'to', 'salt', 'lake', 'city', 'on', 'thursday', 'before', '0', 'am']
+G_I: atis_aircraft
+P_I: atis_flight
+P_S: ['O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'B-fromloc.city_name', 'O', 'B-toloc.city_name', 'I-toloc.city_name', 'I-toloc.city_name', 'O', 'B-depart_date.day_name', 'B-depart_time.time_relative', 'B-depart_time.time', 'I-depart_time.time']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 500 ['i', 'need', 'flight', 'numbers', 'and', 'airlines', 'for', 'flights', 'departing', 'from', 'oakland', 'to', 'salt', 'lake', 'city', 'on', 'thursday', 'departing', 'before', '0', 'am']
+G_I: _UNK
+P_I: atis_aircraft#atis_flight#atis_flight_no
+P_S: ['O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'B-fromloc.city_name', 'O', 'B-toloc.city_name', 'I-toloc.city_name', 'I-toloc.city_name', 'O', 'B-depart_date.day_name', 'O', 'B-depart_time.time_relative', 'B-depart_time.time', 'I-depart_time.time']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 646 ['list', 'airfares', 'for', 'first', 'class', 'round', 'trip', 'from', 'detroit', 'to', 'st.', 'petersburg']
+G_I: atis_airfare
+P_I: atis_flight
+P_S: ['O', 'O', 'O', 'B-class_type', 'I-class_type', 'B-round_trip', 'I-round_trip', 'O', 'B-fromloc.city_name', 'O', 'B-toloc.city_name', 'I-toloc.city_name']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 655 ['list', 'seating', 'capacities', 'of', 'delta', 'flights', 'from', 'seattle', 'to', 'salt', 'lake', 'city']
+G_I: atis_meal
+P_I: atis_abbreviation
+P_S: ['O', 'O', 'O', 'O', 'B-airline_name', 'O', 'O', 'B-fromloc.city_name', 'O', 'B-toloc.city_name', 'I-toloc.city_name', 'I-toloc.city_name']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 664 ['give', 'me', 'the', 'flights', 'and', 'fares', 'for', 'a', 'trip', 'to', 'cleveland', 'from', 'miami', 'on', 'wednesday']
+G_I: atis_flight
+P_I: atis_aircraft
+P_S: ['O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'B-toloc.city_name', 'O', 'B-fromloc.city_name', 'O', 'B-depart_date.day_name']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 671 ['give', 'me', 'the', 'meal', 'flights', 'departing', 'early', 'saturday', 'morning', 'from', 'chicago', 'to', 'seattle', 'nonstop']
+G_I: atis_flight
+P_I: atis_flight_no
+P_S: ['O', 'O', 'O', 'B-meal', 'O', 'O', 'B-depart_time.period_mod', 'B-depart_date.day_name', 'B-depart_time.period_of_day', 'O', 'B-fromloc.city_name', 'O', 'B-toloc.city_name', 'B-flight_stop']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 723 ['how', 'many', 'northwest', 'flights', 'leave', 'st.', 'paul']
+G_I: atis_flight
+P_I: atis_abbreviation
+P_S: ['O', 'O', 'B-airline_name', 'O', 'O', 'B-fromloc.city_name', 'I-fromloc.city_name']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 724 ['how', 'many', 'northwest', 'flights', 'leave', 'washington', 'dc']
+G_I: atis_flight
+P_I: atis_abbreviation
+P_S: ['O', 'O', 'B-airline_name', 'O', 'O', 'B-fromloc.city_name', 'B-fromloc.state_code']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 725 ['how', 'many', 'flights', 'does', 'northwest', 'have', 'leaving', 'dulles']
+G_I: atis_flight
+P_I: atis_abbreviation
+P_S: ['O', 'O', 'O', 'O', 'B-airline_name', 'O', 'O', 'B-fromloc.airport_name']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 736 ['show', 'me', 'the', 'airports', 'serviced', 'by', 'tower', 'air']
+G_I: atis_capacity
+P_I: atis_distance
+P_S: ['O', 'O', 'O', 'O', 'O', 'O', 'B-airline_name', 'I-airline_name']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 802 ['how', 'many', 'flights', 'does', 'alaska', 'airlines', 'have', 'to', 'burbank']
+G_I: atis_flight
+P_I: atis_abbreviation
+P_S: ['O', 'O', 'O', 'O', 'B-airline_name', 'I-airline_name', 'O', 'O', 'B-toloc.city_name']
+------------------------------------------------------------------------------------------------------
+

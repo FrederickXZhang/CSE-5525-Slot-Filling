@@ -1,0 +1,624 @@
+Input at line: 6 ['i', 'need', 'a', 'flight', 'from', 'toronto', 'to', 'newark', 'one', 'way', 'leaving', 'wednesday', 'evening', 'or', 'thursday', 'morning']
+P_I: atis_flight
+G_S: ['O', 'O', 'O', 'O', 'O', 'B-fromloc.city_name', 'O', 'B-toloc.city_name', 'B-round_trip', 'I-round_trip', 'O', 'B-depart_date.day_name', 'B-depart_time.period_of_day', 'O', 'B-depart_date.day_name', 'B-depart_time.period_of_day']
+P_S: ['O', 'O', 'O', 'O', 'O', 'B-fromloc.city_name', 'O', 'B-toloc.city_name', 'B-round_trip', 'I-round_trip', 'O', 'B-depart_date.day_name', 'B-depart_time.period_of_day', 'B-or', 'B-depart_date.day_name', 'B-depart_time.period_of_day']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 12 ['on', 'next', 'wednesday', 'flight', 'from', 'kansas', 'city', 'to', 'chicago', 'should', 'arrive', 'in', 'chicago', 'around', '0', 'pm', 'return', 'flight', 'on', 'thursday']
+P_I: atis_flight
+G_S: ['O', 'B-depart_date.date_relative', 'B-depart_date.day_name', 'O', 'O', 'B-fromloc.city_name', 'I-fromloc.city_name', 'O', 'B-toloc.city_name', 'O', 'O', 'O', 'B-toloc.city_name', 'B-arrive_time.time_relative', 'B-arrive_time.time', 'I-arrive_time.time', 'O', 'O', 'O', 'B-return_date.day_name']
+P_S: ['O', 'B-depart_date.date_relative', 'B-depart_date.day_name', 'O', 'O', 'B-fromloc.city_name', 'I-fromloc.city_name', 'O', 'B-toloc.city_name', 'O', 'O', 'O', 'B-toloc.city_name', 'B-arrive_time.time_relative', 'B-arrive_time.time', 'I-arrive_time.time', 'O', 'O', 'O', 'B-arrive_date.day_name']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 16 ['find', 'nonstop', 'flights', 'from', 'salt', 'lake', 'city', 'to', 'new', 'york', 'on', 'saturday', 'april', 'ninth']
+P_I: atis_flight
+G_S: ['O', 'B-flight_stop', 'O', 'O', 'B-fromloc.city_name', 'I-fromloc.city_name', 'I-fromloc.city_name', 'O', 'B-toloc.city_name', 'I-toloc.city_name', 'O', 'B-depart_date.day_name', 'B-depart_date.month_name', 'B-depart_date.day_number']
+P_S: ['O', 'B-flight_stop', 'O', 'O', 'B-fromloc.city_name', 'I-fromloc.city_name', 'I-fromloc.city_name', 'O', 'B-toloc.city_name', 'I-toloc.city_name', 'O', 'B-arrive_date.day_name', 'B-arrive_date.month_name', 'B-arrive_date.day_number']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 52 ['what', 'meals', 'are', 'served', 'on', 'american', 'flight', '0', '0', 'from', 'milwaukee', 'to', 'seattle']
+P_I: atis_flight_no
+G_S: ['O', 'B-meal', 'O', 'O', 'O', 'B-airline_name', 'O', 'B-flight_number', '_UNK', 'O', 'B-fromloc.city_name', 'O', 'B-toloc.city_name']
+P_S: ['O', 'B-meal', 'O', 'O', 'O', 'B-airline_name', 'O', 'B-flight_number', 'B-flight_number', 'O', 'B-fromloc.city_name', 'O', 'B-toloc.city_name']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 57 ['which', 'flights', 'leave', 'newark', 'after', 'noon', 'next', 'saturday', 'and', 'arrive', 'in', 'los', 'angeles']
+P_I: atis_flight
+G_S: ['O', 'O', 'O', 'B-fromloc.city_name', 'B-depart_time.time_relative', 'B-depart_time.period_of_day', 'B-depart_date.date_relative', 'B-depart_date.day_name', 'O', 'O', 'O', 'B-toloc.city_name', 'I-toloc.city_name']
+P_S: ['O', 'O', 'O', 'B-fromloc.city_name', 'B-depart_time.time_relative', 'B-depart_time.time', 'B-depart_date.date_relative', 'B-depart_date.day_name', 'O', 'O', 'O', 'B-toloc.city_name', 'I-toloc.city_name']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 61 ['show', 'me', 'round', 'trip', 'flights', 'from', 'chicago', 'to', 'detroit', 'leaving', 'next', 'tuesday', 'and', 'returning', 'the', 'day', 'after']
+P_I: atis_flight
+G_S: ['O', 'O', 'B-round_trip', 'I-round_trip', 'O', 'O', 'B-fromloc.city_name', 'O', 'B-toloc.city_name', 'O', 'B-depart_date.date_relative', 'B-depart_date.day_name', 'O', 'O', 'O', 'B-return_date.date_relative', 'I-return_date.date_relative']
+P_S: ['O', 'O', 'B-round_trip', 'I-round_trip', 'O', 'O', 'B-fromloc.city_name', 'O', 'B-toloc.city_name', 'O', 'B-depart_date.date_relative', 'B-depart_date.day_name', 'O', 'O', 'O', 'B-return_date.date_relative', 'I-depart_date.today_relative']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 71 ['i', 'would', 'like', 'to', 'leave', 'this', 'afternoon', 'on', 'an', 'american', 'flight', 'from', 'cincinnati', 'to', 'burbank']
+P_I: atis_flight
+G_S: ['O', 'O', 'O', 'O', 'O', 'B-depart_date.today_relative', 'B-depart_time.period_of_day', 'O', 'O', 'B-airline_name', 'O', 'O', 'B-fromloc.city_name', 'O', 'B-toloc.city_name']
+P_S: ['O', 'O', 'O', 'O', 'O', 'O', 'B-depart_time.period_of_day', 'O', 'O', 'B-airline_name', 'O', 'O', 'B-fromloc.city_name', 'O', 'B-toloc.city_name']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 82 ['please', 'find', 'a', 'flight', 'from', 'las', 'vegas', 'to', 'michigan']
+P_I: atis_flight
+G_S: ['O', 'O', 'O', 'O', 'O', 'B-fromloc.city_name', 'I-fromloc.city_name', 'O', 'B-toloc.state_name']
+P_S: ['O', 'O', 'O', 'O', 'O', 'B-fromloc.city_name', 'I-fromloc.city_name', 'O', 'B-toloc.city_name']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 86 ['please', 'find', 'the', 'flights', 'from', 'columbus', 'to', 'houston', 'with', 'a', 'layover', 'in', 'nashville', 'tomorrow']
+P_I: atis_flight
+G_S: ['O', 'O', 'O', 'O', 'O', 'B-fromloc.city_name', 'O', 'B-toloc.city_name', 'O', 'O', 'O', 'O', 'B-stoploc.city_name', 'B-depart_date.today_relative']
+P_S: ['O', 'O', 'O', 'O', 'O', 'B-fromloc.city_name', 'O', 'B-toloc.city_name', 'O', 'O', 'O', 'O', 'B-stoploc.city_name', 'I-depart_date.today_relative']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 95 ['does', 'the', 'airport', 'at', 'burbank', 'have', 'a', 'flight', 'that', '_UNK', 'in', 'from', 'kansas', 'city']
+P_I: atis_flight
+G_S: ['O', 'O', 'O', 'O', 'B-toloc.city_name', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'B-fromloc.city_name', 'I-fromloc.city_name']
+P_S: ['O', 'O', 'O', 'O', 'B-fromloc.city_name', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'B-fromloc.city_name', 'I-fromloc.city_name']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 97 ['which', 'flights', 'arrive', 'in', 'burbank', 'from', 'las', 'vegas', 'on', 'saturday', 'april', 'twenty', 'third', 'in', 'the', 'afternoon']
+P_I: atis_flight
+G_S: ['O', 'O', 'O', 'O', 'B-toloc.city_name', 'O', 'B-fromloc.city_name', 'I-fromloc.city_name', 'O', 'B-depart_date.day_name', 'B-depart_date.month_name', 'B-depart_date.day_number', 'I-depart_date.day_number', 'O', 'O', 'B-depart_time.period_of_day']
+P_S: ['O', 'O', 'O', 'O', 'B-toloc.city_name', 'O', 'B-fromloc.city_name', 'I-fromloc.city_name', 'O', 'B-arrive_date.day_name', 'B-arrive_date.month_name', 'B-arrive_date.day_number', 'I-arrive_date.day_number', 'O', 'O', 'B-arrive_time.period_of_day']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 120 ['what', 'is', 'the', 'ground', 'transportation', 'between', 'the', 'charlotte', 'airport', 'charlotte', 'airport', 'and', 'downtown', 'charlotte']
+P_I: atis_airline
+G_S: ['O', 'O', 'O', 'O', 'O', 'O', 'O', 'B-airport_name', 'I-airport_name', 'B-city_name', 'I-city_name', 'O', 'O', 'B-city_name']
+P_S: ['O', 'O', 'O', 'O', 'O', 'O', 'O', 'B-fromloc.airport_name', 'I-fromloc.airport_name', 'B-fromloc.airport_name', 'I-fromloc.airport_name', 'O', 'O', 'B-toloc.city_name']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 121 ['show', 'me', 'all', 'the', 'flights', 'from', 'charlotte', 'to', 'minneapolis', 'that', 'leave', 'at', '0', 'pm', 'or', 'later', 'on', 'monday']
+P_I: atis_flight
+G_S: ['O', 'O', 'O', 'O', 'O', 'O', 'B-fromloc.city_name', 'O', 'B-toloc.city_name', 'O', 'O', 'O', 'B-depart_time.time', 'I-depart_time.time', 'O', 'B-depart_time.time_relative', 'O', 'B-depart_date.day_name']
+P_S: ['O', 'O', 'O', 'O', 'O', 'O', 'B-fromloc.city_name', 'O', 'B-toloc.city_name', 'O', 'O', 'O', 'B-depart_time.time', 'I-depart_time.time', 'B-or', 'B-depart_time.time_relative', 'O', 'B-depart_date.day_name']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 126 ['show', 'me', 'the', 'flights', 'from', 'minneapolis', 'to', 'indiana']
+P_I: atis_flight
+G_S: ['O', 'O', 'O', 'O', 'O', 'B-fromloc.city_name', 'O', 'B-toloc.state_name']
+P_S: ['O', 'O', 'O', 'O', 'O', 'B-fromloc.city_name', 'O', 'B-toloc.city_name']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 128 ['show', 'me', 'flight', 'us', '0', 'from', 'indianapolis', 'to', 'charlotte', 'on', 'monday', 'and', 'flight', 'us', '0', 'from', 'charlotte', 'to', 'minneapolis', 'on', 'monday', 'and', 'flight', 'twa', '0', 'from', 'minneapolis', 'to', 'indianapolis']
+P_I: atis_flight
+G_S: ['O', 'O', 'O', 'B-airline_code', 'B-flight_number', 'O', 'B-fromloc.city_name', 'O', 'B-toloc.city_name', 'O', 'B-depart_date.day_name', 'O', 'O', 'O', 'B-flight_number', 'O', 'B-fromloc.city_name', 'O', 'B-toloc.city_name', 'O', 'B-depart_date.day_name', 'O', 'O', 'B-airline_code', 'B-flight_number', 'O', 'B-fromloc.city_name', 'O', 'B-toloc.city_name']
+P_S: ['O', 'O', 'O', 'B-airline_code', 'B-flight_number', 'O', 'B-fromloc.city_name', 'O', 'B-toloc.city_name', 'O', 'B-depart_date.day_name', 'O', 'O', 'B-airline_code', 'B-flight_number', 'O', 'B-fromloc.city_name', 'O', 'B-toloc.city_name', 'O', 'B-depart_date.day_name', 'O', 'O', 'B-airline_code', 'B-flight_number', 'O', 'B-fromloc.city_name', 'O', 'B-toloc.city_name']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 136 ['i', 'need', 'to', 'get', 'from', 'cincinnati', 'to', 'denver', 'on', 'june', 'sixth', 'by', '0', 'pm']
+P_I: atis_flight
+G_S: ['O', 'O', 'O', 'O', 'O', 'B-fromloc.city_name', 'O', 'B-toloc.city_name', 'O', 'B-arrive_date.month_name', 'B-arrive_date.day_number', 'B-arrive_time.time_relative', 'B-arrive_time.time', 'I-arrive_time.time']
+P_S: ['O', 'O', 'O', 'O', 'O', 'B-fromloc.city_name', 'O', 'B-toloc.city_name', 'O', 'B-depart_date.month_name', 'B-depart_date.day_number', 'B-depart_time.time_relative', 'B-depart_time.time', 'I-depart_time.time']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 166 ['how', 'many', 'canadian', 'airlines', 'flights', 'use', 'aircraft', '_UNK']
+P_I: atis_abbreviation
+G_S: ['O', 'O', 'B-airline_name', 'I-airline_name', 'O', 'O', 'O', 'B-aircraft_code']
+P_S: ['O', 'O', 'B-airline_name', 'I-airline_name', 'O', 'O', 'O', 'O']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 169 ['which', 'airport', 'is', 'closest', 'to', 'ontario', 'california']
+P_I: atis_capacity
+G_S: ['O', 'O', 'O', 'B-mod', 'O', 'B-city_name', 'B-state_name']
+P_S: ['O', 'O', 'O', 'B-mod', 'O', 'B-toloc.city_name', 'B-toloc.state_name']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 175 ['show', 'me', 'the', 'delta', 'flights', 'which', 'serve', 'a', 'snack', 'to', 'coach', 'passengers']
+P_I: atis_flight
+G_S: ['O', 'O', 'O', 'B-airline_name', 'O', 'O', 'O', 'O', 'B-meal_description', 'O', '_UNK', 'O']
+P_S: ['O', 'O', 'O', 'B-airline_name', 'O', 'O', 'O', 'O', 'B-meal_description', 'O', 'B-class_type', 'O']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 176 ['what', 'is', 'meal', 'code', '_UNK']
+P_I: atis_quantity
+G_S: ['O', 'O', 'O', 'O', 'B-meal_code']
+P_S: ['O', 'O', 'B-meal', 'O', 'O']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 180 ['list', 'the', 'tower', 'air', 'flights', 'on', 'mondays']
+P_I: atis_flight
+G_S: ['O', 'O', 'B-airline_name', 'I-airline_name', 'O', 'O', 'B-day_name']
+P_S: ['O', 'O', 'B-airline_name', 'I-airline_name', 'O', 'O', 'B-depart_date.day_name']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 191 ['how', 'far', 'is', 'new', "york's", 'la', 'guardia', 'from', 'downtown']
+P_I: atis_ground_fare
+G_S: ['O', 'O', 'O', 'B-city_name', 'I-city_name', 'B-airport_name', 'I-airport_name', 'O', 'O']
+P_S: ['O', 'O', 'O', 'B-fromloc.city_name', 'I-fromloc.city_name', 'B-fromloc.airport_name', 'I-fromloc.airport_name', 'O', 'O']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 192 ['how', 'far', 'is', 'toronto', 'international', 'from', 'downtown']
+P_I: atis_ground_fare
+G_S: ['O', 'O', 'O', 'B-airport_name', 'I-airport_name', 'O', 'O']
+P_S: ['O', 'O', 'O', 'B-fromloc.airport_name', 'I-fromloc.airport_name', 'O', 'O']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 193 ['how', 'far', 'is', 'los', 'angeles', 'international', 'from', 'downtown']
+P_I: atis_ground_fare
+G_S: ['O', 'O', 'O', 'B-airport_name', 'I-airport_name', 'I-airport_name', 'O', 'O']
+P_S: ['O', 'O', 'O', 'B-fromloc.airport_name', 'I-fromloc.airport_name', 'I-fromloc.airport_name', 'O', 'O']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 194 ['how', 'far', 'is', 'san', 'francisco', 'international', 'from', 'downtown']
+P_I: atis_ground_fare
+G_S: ['O', 'O', 'O', 'B-airport_name', 'I-airport_name', 'I-airport_name', 'O', 'O']
+P_S: ['O', 'O', 'O', 'B-fromloc.airport_name', 'I-fromloc.airport_name', 'I-fromloc.airport_name', 'O', 'O']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 196 ['how', 'much', 'is', 'a', 'limousine', 'service', 'in', 'la', 'guardia']
+P_I: atis_flight_time
+G_S: ['O', 'O', 'O', 'O', 'B-transport_type', 'O', 'O', 'B-airport_name', 'I-airport_name']
+P_S: ['O', 'O', 'O', 'O', 'B-transport_type', 'O', 'O', 'B-fromloc.airport_name', 'I-fromloc.airport_name']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 205 ['what', 'is', 'the', 'first', 'class', 'round', 'trip', 'airfare', 'from', '_UNK', 'indianapolis', 'to', 'memphis']
+P_I: atis_airfare
+G_S: ['O', 'O', 'O', 'B-class_type', 'I-class_type', 'B-round_trip', 'I-round_trip', 'O', 'O', 'O', 'B-fromloc.city_name', 'O', 'B-toloc.city_name']
+P_S: ['O', 'O', 'O', 'B-class_type', 'I-class_type', 'B-round_trip', 'I-round_trip', 'O', 'O', 'B-fromloc.city_name', 'B-fromloc.city_name', 'O', 'B-toloc.city_name']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 232 ['list', 'the', 'distance', 'in', '_UNK', 'from', 'boston', 'airport', 'to', 'downtown', 'boston']
+P_I: atis_ground_fare
+G_S: ['O', 'O', 'O', 'O', 'O', 'O', 'B-fromloc.airport_name', 'I-fromloc.airport_name', 'O', 'O', 'B-city_name']
+P_S: ['O', 'O', 'O', 'O', 'O', 'O', 'B-fromloc.airport_name', 'I-fromloc.airport_name', 'O', 'O', 'B-toloc.city_name']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 233 ['list', 'the', 'distance', 'in', '_UNK', 'from', 'new', "york's", 'la', 'guardia', 'airport', 'to', 'downtown', 'new', 'york', 'city']
+P_I: atis_ground_fare
+G_S: ['O', 'O', 'O', 'O', 'O', 'O', 'B-fromloc.city_name', 'I-fromloc.city_name', 'B-fromloc.airport_name', 'I-fromloc.airport_name', 'I-fromloc.airport_name', 'O', 'O', 'B-city_name', 'I-city_name', 'I-city_name']
+P_S: ['O', 'O', 'O', 'O', 'O', 'O', 'B-fromloc.airport_name', 'I-fromloc.airport_name', 'B-fromloc.airport_name', 'I-fromloc.airport_name', 'I-fromloc.airport_name', 'O', 'O', 'B-toloc.city_name', 'I-toloc.city_name', 'I-toloc.city_name']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 234 ['list', 'the', 'distance', 'in', '_UNK', 'from', 'toronto', 'international', 'airport', 'to', 'downtown', 'toronto']
+P_I: atis_ground_fare
+G_S: ['O', 'O', 'O', 'O', 'O', 'O', 'B-fromloc.airport_name', 'I-fromloc.airport_name', 'I-fromloc.airport_name', 'O', 'O', 'B-city_name']
+P_S: ['O', 'O', 'O', 'O', 'O', 'O', 'B-fromloc.airport_name', 'I-fromloc.airport_name', 'I-fromloc.airport_name', 'O', 'O', 'B-toloc.city_name']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 236 ['list', 'limousine', 'rates', 'for', 'the', 'city', 'of', 'boston']
+P_I: atis_flight_time
+G_S: ['O', 'B-transport_type', 'O', 'O', 'O', 'B-city_name', 'I-city_name', 'I-city_name']
+P_S: ['O', 'B-transport_type', 'O', 'O', 'O', 'O', 'O', 'B-city_name']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 243 ['what', 'is', 'the', 'seating', 'capacity', 'for', 'aircraft', '_UNK']
+P_I: atis_meal
+G_S: ['O', 'O', 'O', 'O', 'O', 'O', 'O', 'B-aircraft_code']
+P_S: ['O', 'O', 'O', 'O', 'O', 'O', 'O', 'O']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 244 ['what', 'is', 'the', 'seating', 'capacity', 'for', 'delta', '_UNK']
+P_I: atis_meal
+G_S: ['O', 'O', 'O', 'O', 'O', 'O', 'B-airline_name', 'B-aircraft_code']
+P_S: ['O', 'O', 'O', 'O', 'O', 'O', 'B-airline_name', 'I-airline_name']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 245 ['list', 'flights', 'from', 'seattle', 'to', 'salt', 'lake', 'city', 'on', 'delta', '_UNK']
+P_I: atis_flight
+G_S: ['O', 'O', 'O', 'B-fromloc.city_name', 'O', 'B-toloc.city_name', 'I-toloc.city_name', 'I-toloc.city_name', 'O', 'B-airline_name', 'B-aircraft_code']
+P_S: ['O', 'O', 'O', 'B-fromloc.city_name', 'O', 'B-toloc.city_name', 'I-toloc.city_name', 'I-toloc.city_name', 'O', 'B-airline_name', 'I-airline_name']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 246 ['list', 'flights', 'from', 'seattle', 'to', 'salt', 'lake', 'city', 'on', 'delta', '_UNK']
+P_I: atis_flight
+G_S: ['O', 'O', 'O', 'B-fromloc.city_name', 'O', 'B-toloc.city_name', 'I-toloc.city_name', 'I-toloc.city_name', 'O', 'B-airline_name', 'B-aircraft_code']
+P_S: ['O', 'O', 'O', 'B-fromloc.city_name', 'O', 'B-toloc.city_name', 'I-toloc.city_name', 'I-toloc.city_name', 'O', 'B-airline_name', 'I-airline_name']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 292 ['what', 'does', 'fare', 'code', '_UNK', 'mean']
+P_I: atis_quantity
+G_S: ['O', 'O', 'O', 'O', 'B-fare_basis_code', 'O']
+P_S: ['O', 'O', 'O', 'O', 'O', 'O']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 293 ['i', 'would', 'like', 'to', 'have', 'the', 'airline', 'that', 'flies', 'toronto', 'detroit', 'and', 'st.', 'louis']
+P_I: atis_ground_service
+G_S: ['O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'B-fromloc.city_name', 'B-toloc.city_name', 'O', 'B-toloc.city_name', 'I-toloc.city_name']
+P_S: ['O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'B-fromloc.city_name', 'B-fromloc.city_name', 'O', 'B-toloc.city_name', 'I-toloc.city_name']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 320 ['show', 'me', 'flights', 'from', 'montreal', 'to', 'orlando', 'and', 'long', 'beach']
+P_I: atis_flight
+G_S: ['O', 'O', 'O', 'O', 'B-fromloc.city_name', 'O', 'B-toloc.city_name', 'O', 'B-toloc.city_name', 'I-toloc.city_name']
+P_S: ['O', 'O', 'O', 'O', 'B-fromloc.city_name', 'O', 'B-toloc.city_name', 'O', 'B-fromloc.city_name', 'I-fromloc.city_name']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 360 ['what', 'is', '_UNK']
+P_I: atis_quantity
+G_S: ['O', 'O', 'B-airport_code']
+P_S: ['O', 'O', 'O']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 361 ['what', 'is', '_UNK']
+P_I: atis_quantity
+G_S: ['O', 'O', 'B-airport_code']
+P_S: ['O', 'O', 'O']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 363 ['what', 'does', '_UNK', 'sa', 'mean']
+P_I: atis_quantity
+G_S: ['O', 'O', 'B-mod', 'B-days_code', 'O']
+P_S: ['O', 'O', 'B-airline_code', 'B-days_code', 'O']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 368 ['what', 'ground', 'transportation', 'is', 'available', 'from', 'dallas', 'fort', 'worth', 'airport', 'to', 'downtown', 'dallas']
+P_I: atis_airline
+G_S: ['O', 'O', 'O', 'O', 'O', 'O', 'B-airport_name', 'I-airport_name', 'I-airport_name', 'I-airport_name', 'O', 'O', 'B-city_name']
+P_S: ['O', 'O', 'O', 'O', 'O', 'O', 'B-fromloc.airport_name', 'I-fromloc.airport_name', 'I-fromloc.airport_name', 'I-fromloc.airport_name', 'O', 'O', 'B-toloc.city_name']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 369 ['how', 'many', 'passengers', 'can', 'an', '_UNK', 'aircraft', '_UNK']
+P_I: atis_meal
+G_S: ['O', 'O', 'O', 'O', 'O', 'B-aircraft_code', 'O', 'O']
+P_S: ['O', 'O', 'O', 'O', 'O', 'O', 'O', 'O']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 370 ['what', 'is', 'the', 'seating', 'capacity', 'of', 'a', '_UNK']
+P_I: atis_meal
+G_S: ['O', 'O', 'O', 'O', 'O', 'O', 'O', 'B-aircraft_code']
+P_S: ['O', 'O', 'O', 'O', 'O', 'O', 'O', 'O']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 372 ['what', 'ground', 'transportation', 'is', 'available', 'between', 'phoenix', 'airport', 'and', 'downtown', 'phoenix']
+P_I: atis_airline
+G_S: ['O', 'O', 'O', 'O', 'O', 'O', 'B-airport_name', 'I-airport_name', 'O', 'O', 'B-city_name']
+P_S: ['O', 'O', 'O', 'O', 'O', 'O', 'B-fromloc.airport_name', 'I-fromloc.airport_name', 'O', 'O', 'B-toloc.city_name']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 376 ['show', 'me', 'the', 'flights', 'between', 'milwaukee', 'and', 'indiana']
+P_I: atis_flight
+G_S: ['O', 'O', 'O', 'O', 'O', 'B-fromloc.city_name', 'O', 'B-toloc.state_name']
+P_S: ['O', 'O', 'O', 'O', 'O', 'B-fromloc.city_name', 'O', 'B-toloc.city_name']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 378 ['what', 'ground', 'transportation', 'is', 'available', 'between', 'pittsburgh', 'airport', 'and', 'downtown', 'pittsburgh']
+P_I: atis_airline
+G_S: ['O', 'O', 'O', 'O', 'O', 'O', 'B-airport_name', 'I-airport_name', 'O', 'O', 'B-city_name']
+P_S: ['O', 'O', 'O', 'O', 'O', 'O', 'B-fromloc.airport_name', 'I-fromloc.airport_name', 'O', 'O', 'B-toloc.city_name']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 380 ['what', 'ground', 'transportation', 'is', 'available', 'between', '_UNK', 'and', 'downtown', 'washington']
+P_I: atis_airline
+G_S: ['O', 'O', 'O', 'O', 'O', 'O', 'B-airport_code', 'O', 'O', 'B-city_name']
+P_S: ['O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'B-toloc.city_name']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 381 ['what', 'are', 'the', 'flights', 'between', '_UNK', 'and', 'milwaukee']
+P_I: atis_flight
+G_S: ['O', 'O', 'O', 'O', 'O', 'B-airport_code', 'O', 'B-city_name']
+P_S: ['O', 'O', 'O', 'O', 'O', 'B-fromloc.city_name', 'O', 'B-toloc.city_name']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 382 ['what', 'ground', 'transportation', 'is', 'available', 'between', 'milwaukee', 'airport', 'and', 'downtown', 'milwaukee']
+P_I: atis_airline
+G_S: ['O', 'O', 'O', 'O', 'O', 'O', 'B-airport_name', 'I-airport_name', 'O', 'O', 'B-city_name']
+P_S: ['O', 'O', 'O', 'O', 'O', 'O', 'B-fromloc.airport_name', 'I-fromloc.airport_name', 'O', 'O', 'B-toloc.city_name']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 383 ['_UNK', 'the', 'type', 'of', 'aircraft', 'used', 'on', 'a', 'flight', 'from', 'cleveland', 'to', 'dallas', 'that', 'leaves', 'before', 'noon']
+P_I: atis_city
+G_S: ['O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'B-fromloc.city_name', 'O', 'B-toloc.city_name', 'O', 'O', 'B-depart_time.time_relative', 'B-depart_time.period_of_day']
+P_S: ['O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'B-fromloc.city_name', 'O', 'B-toloc.city_name', 'O', 'O', 'B-depart_time.time_relative', 'B-depart_time.time']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 413 ['i', 'want', 'a', 'flight', 'from', 'nashville', 'to', 'seattle', 'that', 'arrives', 'no', 'later', 'than', '0', 'pm']
+P_I: atis_flight
+G_S: ['O', 'O', 'O', 'O', 'O', 'B-fromloc.city_name', 'O', 'B-toloc.city_name', 'O', 'O', 'B-arrive_time.time_relative', 'I-arrive_time.time_relative', 'I-arrive_time.time_relative', 'B-arrive_time.time', 'I-arrive_time.time']
+P_S: ['O', 'O', 'O', 'O', 'O', 'B-fromloc.city_name', 'O', 'B-toloc.city_name', 'O', 'O', 'O', 'B-arrive_time.time_relative', 'O', 'B-arrive_time.time', 'I-arrive_time.time']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 414 ['i', 'want', 'a', 'flight', 'from', 'memphis', 'to', 'seattle', 'that', 'arrives', 'no', 'later', 'than', '0', 'pm']
+P_I: atis_flight
+G_S: ['O', 'O', 'O', 'O', 'O', 'B-fromloc.city_name', 'O', 'B-toloc.city_name', 'O', 'O', 'B-arrive_time.time_relative', 'I-arrive_time.time_relative', 'I-arrive_time.time_relative', 'B-arrive_time.time', 'I-arrive_time.time']
+P_S: ['O', 'O', 'O', 'O', 'O', 'B-fromloc.city_name', 'O', 'B-toloc.city_name', 'O', 'O', 'O', 'B-arrive_time.time_relative', 'O', 'B-arrive_time.time', 'I-arrive_time.time']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 473 ['get', 'flights', 'from', 'milwaukee', 'to', '_UNK']
+P_I: atis_flight
+G_S: ['O', 'O', 'O', 'B-fromloc.city_name', 'O', 'B-toloc.airport_code']
+P_S: ['O', 'O', 'O', 'B-fromloc.city_name', 'O', 'B-toloc.city_name']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 481 ['get', 'flight', 'from', 'toronto', 'to', 'san', 'diego', 'stopping', 'at', '_UNK']
+P_I: atis_flight
+G_S: ['O', 'O', 'O', 'B-fromloc.city_name', 'O', 'B-toloc.city_name', 'I-toloc.city_name', 'O', 'O', '_UNK']
+P_S: ['O', 'O', 'O', 'B-fromloc.city_name', 'O', 'B-toloc.city_name', 'I-toloc.city_name', 'O', 'O', 'O']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 486 ['i', 'need', 'flight', 'information', 'for', 'a', 'flight', 'departing', 'from', 'indianapolis', 'to', 'cleveland', 'departing', 'tuesday', 'at', 'noon']
+P_I: atis_flight
+G_S: ['O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'B-fromloc.city_name', 'O', 'B-toloc.city_name', 'O', 'B-depart_date.day_name', 'O', 'B-depart_time.period_of_day']
+P_S: ['O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'B-fromloc.city_name', 'O', 'B-toloc.city_name', 'O', 'B-depart_date.day_name', 'O', 'B-depart_time.time']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 498 ['i', 'need', 'flight', 'and', 'fare', 'information', 'for', 'thursday', 'departing', '_UNK', 'to', '0', 'am', 'from', 'oakland', 'going', 'to', 'salt', 'lake', 'city']
+P_I: atis_aircraft
+G_S: ['O', 'O', 'O', 'O', 'O', 'O', 'O', 'B-depart_date.day_name', 'O', 'B-depart_time.time_relative', 'I-depart_time.time_relative', 'B-depart_time.time', 'I-depart_time.time', 'O', 'B-fromloc.city_name', 'O', 'O', 'B-toloc.city_name', 'I-toloc.city_name', 'I-toloc.city_name']
+P_S: ['O', 'O', 'O', 'O', 'O', 'O', 'O', 'B-depart_date.day_name', 'O', 'O', 'O', 'B-depart_time.time', 'I-depart_time.time', 'O', 'B-fromloc.city_name', 'O', 'O', 'B-toloc.city_name', 'I-toloc.city_name', 'I-toloc.city_name']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 503 ['list', 'california', 'nevada', 'arizona', 'airports']
+P_I: atis_capacity
+G_S: ['O', 'B-state_name', 'B-state_name', 'B-state_name', 'O']
+P_S: ['O', 'B-toloc.state_name', 'B-toloc.state_name', 'B-toloc.state_name', 'O']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 504 ['list', 'the', 'arizona', 'airport']
+P_I: atis_capacity
+G_S: ['O', 'O', 'B-state_name', 'O']
+P_S: ['O', 'O', 'B-airport_name', 'I-airport_name']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 505 ['list', 'california', 'airports']
+P_I: atis_capacity
+G_S: ['O', 'B-state_name', 'O']
+P_S: ['O', 'B-toloc.state_name', 'O']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 507 ['list', 'california', 'airports']
+P_I: atis_capacity
+G_S: ['O', 'B-state_name', 'O']
+P_S: ['O', 'B-toloc.state_name', 'O']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 513 ['what', 'is', '_UNK']
+P_I: atis_quantity
+G_S: ['O', 'O', 'B-airport_code']
+P_S: ['O', 'O', 'O']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 515 ['please', 'list', 'only', 'the', 'flights', 'from', 'cleveland', 'to', 'dallas', 'that', 'leave', 'before', 'noon']
+P_I: atis_flight
+G_S: ['O', 'O', 'O', 'O', 'O', 'O', 'B-fromloc.city_name', 'O', 'B-toloc.city_name', 'O', 'O', 'B-depart_time.time_relative', 'B-depart_time.period_of_day']
+P_S: ['O', 'O', 'O', 'O', 'O', 'O', 'B-fromloc.city_name', 'O', 'B-toloc.city_name', 'O', 'O', 'B-depart_time.time_relative', 'B-depart_time.time']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 516 ['what', 'type', 'of', 'aircraft', 'are', 'flying', 'from', 'cleveland', 'to', 'dallas', 'before', 'noon']
+P_I: atis_city
+G_S: ['O', 'O', 'O', 'O', 'O', 'O', 'O', 'B-fromloc.city_name', 'O', 'B-toloc.city_name', 'B-depart_time.time_relative', 'B-depart_time.period_of_day']
+P_S: ['O', 'O', 'O', 'O', 'O', 'O', 'O', 'B-fromloc.city_name', 'O', 'B-toloc.city_name', 'B-depart_time.time_relative', 'B-depart_time.time']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 539 ['what', 'are', 'restrictions', 'ap', '0']
+P_I: atis_quantity
+G_S: ['O', 'O', 'O', 'B-restriction_code', 'I-restriction_code']
+P_S: ['O', 'O', 'B-restriction_code', 'B-restriction_code', 'I-restriction_code']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 547 ['please', 'list', 'all', 'flights', 'from', 'new', 'york', 'to', 'miami', 'any', 'any', 'type', 'of', 'class']
+P_I: atis_flight
+G_S: ['O', 'O', 'O', 'O', 'O', 'B-fromloc.city_name', 'I-fromloc.city_name', 'O', 'B-toloc.city_name', 'O', 'O', 'O', 'O', 'O']
+P_S: ['O', 'O', 'O', 'O', 'O', 'B-fromloc.city_name', 'I-fromloc.city_name', 'O', 'B-toloc.city_name', 'O', 'O', 'O', 'O', 'I-class_type']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 548 ['what', 'does', 'fare', 'code', '_UNK', 'mean']
+P_I: atis_quantity
+G_S: ['O', 'O', 'O', 'O', 'B-fare_basis_code', 'O']
+P_S: ['O', 'O', 'O', 'O', 'O', 'O']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 550 ['what', 'does', 'fare', 'code', '_UNK', 'mean']
+P_I: atis_quantity
+G_S: ['O', 'O', 'O', 'O', 'B-fare_basis_code', 'O']
+P_S: ['O', 'O', 'O', 'O', 'O', 'O']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 551 ['what', 'does', 'fare', 'code', '_UNK', 'mean']
+P_I: atis_quantity
+G_S: ['O', 'O', 'O', 'O', 'B-fare_basis_code', 'O']
+P_S: ['O', 'O', 'O', 'O', 'O', 'O']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 552 ['what', 'does', 'fare', 'code', '_UNK', 'mean']
+P_I: atis_quantity
+G_S: ['O', 'O', 'O', 'O', 'B-fare_basis_code', 'O']
+P_S: ['O', 'O', 'O', 'O', 'O', 'O']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 553 ['what', 'does', 'fare', 'code', '_UNK', 'mean']
+P_I: atis_quantity
+G_S: ['O', 'O', 'O', 'O', 'B-fare_basis_code', 'O']
+P_S: ['O', 'O', 'O', 'O', 'O', 'O']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 597 ['what', 'does', 'the', 'restriction', '_UNK', 'mean']
+P_I: atis_quantity
+G_S: ['O', 'O', 'O', 'O', 'B-restriction_code', 'O']
+P_S: ['O', 'O', 'O', 'O', 'O', 'O']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 622 ['list', 'distance', 'from', 'airports', 'to', 'downtown', 'in', 'new', 'york']
+P_I: atis_ground_fare
+G_S: ['O', 'O', 'O', 'O', 'O', 'O', 'O', 'B-city_name', 'I-city_name']
+P_S: ['O', 'O', 'O', 'O', 'O', 'O', 'O', 'B-toloc.city_name', 'I-toloc.city_name']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 643 ['list', 'flights', 'and', 'fares', 'from', 'tacoma', 'to', 'orlando', 'round', 'trip', 'leaving', 'saturday', 'returning', 'next', 'saturday']
+P_I: atis_aircraft
+G_S: ['O', 'O', 'O', 'O', 'O', 'B-fromloc.city_name', 'O', 'B-toloc.city_name', 'B-round_trip', 'I-round_trip', 'O', 'B-depart_date.day_name', 'O', 'B-return_date.date_relative', 'B-return_date.day_name']
+P_S: ['O', 'O', 'O', 'O', 'O', 'B-fromloc.city_name', 'O', 'B-toloc.city_name', 'B-round_trip', 'I-round_trip', 'O', 'B-depart_date.day_name', 'O', 'B-depart_date.date_relative', 'B-depart_date.day_name']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 644 ['what', 'class', 'is', 'fare', 'code', 'q']
+P_I: atis_quantity
+G_S: ['O', 'O', 'O', 'O', 'O', '_UNK']
+P_S: ['O', 'I-class_type', 'O', 'O', 'O', 'B-fare_basis_code']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 651 ['list', 'flights', 'from', 'cincinnati', 'to', 'tampa', 'before', 'noon']
+P_I: atis_flight
+G_S: ['O', 'O', 'O', 'B-fromloc.city_name', 'O', 'B-toloc.city_name', 'B-depart_time.time_relative', 'B-depart_time.period_of_day']
+P_S: ['O', 'O', 'O', 'B-fromloc.city_name', 'O', 'B-toloc.city_name', 'B-depart_time.time_relative', 'B-depart_time.time']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 687 ['cheapest', 'round', 'trip', 'fare', 'from', 'or', 'indianapolis', 'to', 'orlando', 'on', 'december', 'twenty', 'fifth']
+P_I: atis_airfare
+G_S: ['B-cost_relative', 'B-round_trip', 'I-round_trip', 'O', 'O', 'O', 'B-fromloc.city_name', 'O', 'B-toloc.city_name', 'O', 'B-depart_date.month_name', 'B-depart_date.day_number', 'I-depart_date.day_number']
+P_S: ['B-cost_relative', 'B-round_trip', 'I-round_trip', 'O', 'O', 'B-or', 'B-fromloc.city_name', 'O', 'B-toloc.city_name', 'O', 'B-depart_date.month_name', 'B-depart_date.day_number', 'I-depart_date.day_number']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 722 ['a', 'flight', 'from', 'baltimore', 'to', 'san', 'francisco', 'arriving', 'between', '0', 'and', '0', 'pm']
+P_I: atis_flight
+G_S: ['O', '_UNK', 'O', 'B-fromloc.city_name', 'O', 'B-toloc.city_name', 'I-toloc.city_name', 'O', 'O', 'B-arrive_time.start_time', 'O', 'B-arrive_time.end_time', 'I-arrive_time.end_time']
+P_S: ['O', 'O', 'O', 'B-fromloc.city_name', 'O', 'B-toloc.city_name', 'I-toloc.city_name', 'O', 'O', 'B-arrive_time.start_time', 'O', 'B-arrive_time.end_time', 'I-arrive_time.end_time']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 750 ['show', 'me', 'the', 'cost', 'of', 'a', 'first', 'class', 'ticket', 'from', 'detroit', 'to', 'las', 'vegas', 'and', 'back']
+P_I: atis_airfare
+G_S: ['O', 'O', 'O', 'O', 'O', 'O', 'B-class_type', 'I-class_type', 'O', 'O', 'B-fromloc.city_name', 'O', 'B-toloc.city_name', 'I-toloc.city_name', 'O', 'B-round_trip']
+P_S: ['O', 'O', 'O', 'O', 'O', 'O', 'B-class_type', 'I-class_type', 'O', 'O', 'B-fromloc.city_name', 'O', 'B-toloc.city_name', 'I-toloc.city_name', 'O', 'O']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 751 ['what', 'is', 'the', 'earliest', 'arriving', 'flight', 'from', 'boston', 'to', 'washington', 'dc']
+P_I: atis_flight
+G_S: ['O', 'O', 'O', 'B-flight_mod', 'I-flight_mod', 'O', 'O', 'B-fromloc.city_name', 'O', 'B-toloc.city_name', 'B-toloc.state_code']
+P_S: ['O', 'O', 'O', 'B-flight_mod', 'O', 'O', 'O', 'B-fromloc.city_name', 'O', 'B-toloc.city_name', 'B-toloc.state_code']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 752 ['what', 'is', 'the', 'earliest', 'arriving', 'flight', 'between', 'boston', 'and', 'washington', 'dc']
+P_I: atis_flight
+G_S: ['O', 'O', 'O', 'B-flight_mod', 'I-flight_mod', 'O', 'O', 'B-fromloc.city_name', 'O', 'B-toloc.city_name', 'B-toloc.state_code']
+P_S: ['O', 'O', 'O', 'B-flight_mod', 'O', 'O', 'O', 'B-fromloc.city_name', 'O', 'B-toloc.city_name', 'B-toloc.state_code']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 753 ["what's", 'the', 'earliest', 'arriving', 'flight', 'between', 'boston', 'and', 'washington', 'dc']
+P_I: atis_flight
+G_S: ['O', 'O', 'B-flight_mod', 'I-flight_mod', 'O', 'O', 'B-fromloc.city_name', 'O', 'B-toloc.city_name', 'B-toloc.state_code']
+P_S: ['O', 'O', 'B-flight_mod', 'O', 'O', 'O', 'B-fromloc.city_name', 'O', 'B-toloc.city_name', 'B-toloc.state_code']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 754 ['what', 'is', 'the', 'earliest', 'arriving', 'flight', 'from', 'houston', 'to', 'orlando']
+P_I: atis_flight
+G_S: ['O', 'O', 'O', 'B-flight_mod', 'I-flight_mod', 'O', 'O', 'B-fromloc.city_name', 'O', 'B-toloc.city_name']
+P_S: ['O', 'O', 'O', 'B-flight_mod', 'O', 'O', 'O', 'B-fromloc.city_name', 'O', 'B-toloc.city_name']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 755 ['what', 'is', 'the', 'earliest', 'arriving', 'flight', 'from', 'houston', 'to', 'orlando']
+P_I: atis_flight
+G_S: ['O', 'O', 'O', 'B-flight_mod', 'I-flight_mod', 'O', 'O', 'B-fromloc.city_name', 'O', 'B-toloc.city_name']
+P_S: ['O', 'O', 'O', 'B-flight_mod', 'O', 'O', 'O', 'B-fromloc.city_name', 'O', 'B-toloc.city_name']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 767 ['list', 'the', 'airlines', 'with', 'flights', 'to', 'or', 'from', 'denver']
+P_I: atis_ground_service
+G_S: ['O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'B-city_name']
+P_S: ['O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'B-fromloc.city_name']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 777 ['list', 'all', 'of', 'the', 'daily', 'flights', 'arriving', 'in', 'denver', 'from', '0', 'to', '0', 'pm']
+P_I: atis_flight
+G_S: ['O', 'O', 'O', 'O', 'B-flight_days', 'O', 'O', 'O', 'B-toloc.city_name', 'O', 'B-arrive_time.start_time', 'O', 'B-arrive_time.end_time', 'I-arrive_time.end_time']
+P_S: ['O', 'O', 'O', 'O', 'B-flight_days', 'O', 'O', 'O', 'B-toloc.city_name', 'O', 'B-arrive_time.start_time', 'O', 'B-arrive_time.time', 'I-arrive_time.time']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 786 ['list', 'all', 'flights', 'arriving', 'or', 'leaving', 'denver', 'between', '0', 'and', '0', 'pm']
+P_I: atis_flight
+G_S: ['O', 'O', 'O', 'O', 'O', 'O', 'B-city_name', 'O', 'B-depart_time.start_time', 'O', 'B-depart_time.end_time', 'I-depart_time.end_time']
+P_S: ['O', 'O', 'O', 'O', 'O', 'O', 'B-fromloc.city_name', 'O', 'B-arrive_time.start_time', 'O', 'B-arrive_time.end_time', 'I-arrive_time.end_time']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 791 ['is', 'there', 'ground', 'transportation', 'from', 'the', 'memphis', 'airport', 'into', 'town', 'when', 'if', 'i', 'arrive', 'at', '0', 'in', 'the', 'morning']
+P_I: atis_airline
+G_S: ['O', 'O', 'O', 'O', 'O', 'O', 'B-airport_name', 'I-airport_name', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'B-period_of_day']
+P_S: ['O', 'O', 'O', 'O', 'O', 'O', 'B-fromloc.airport_name', 'I-fromloc.airport_name', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'B-arrive_time.time', 'O', 'O', 'B-arrive_time.period_of_day']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 793 ['what', 'is', '_UNK']
+P_I: atis_quantity
+G_S: ['O', 'O', 'B-airport_code']
+P_S: ['O', 'O', 'O']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 794 ['what', 'ground', 'transportation', 'is', 'available', 'from', 'la', 'guardia', 'airport', 'into', 'new', 'york', 'city']
+P_I: atis_airline
+G_S: ['O', 'O', 'O', 'O', 'O', 'O', 'B-airport_name', 'I-airport_name', 'I-airport_name', 'O', 'B-city_name', 'I-city_name', 'I-city_name']
+P_S: ['O', 'O', 'O', 'O', 'O', 'O', 'B-fromloc.airport_name', 'I-fromloc.airport_name', 'I-fromloc.airport_name', 'O', 'B-toloc.city_name', 'I-toloc.city_name', 'I-toloc.city_name']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 795 ['is', 'there', 'ground', 'transportation', 'from', '_UNK', 'into', 'new', 'york', 'city']
+P_I: atis_airline
+G_S: ['O', 'O', 'O', 'O', 'O', 'B-airport_code', 'O', 'B-city_name', 'I-city_name', 'I-city_name']
+P_S: ['O', 'O', 'O', 'O', 'O', 'O', 'O', 'B-toloc.city_name', 'I-toloc.city_name', 'I-toloc.city_name']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 796 ['please', 'list', 'the', 'ground', 'transportation', 'from', '_UNK', 'into', 'new', 'york', 'city']
+P_I: atis_airline
+G_S: ['O', 'O', 'O', 'O', 'O', 'O', 'B-airport_code', 'O', 'B-city_name', 'I-city_name', 'I-city_name']
+P_S: ['O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'B-toloc.city_name', 'I-toloc.city_name', 'I-toloc.city_name']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 797 ['please', 'list', 'ground', 'transportation', 'from', 'ewr', 'into', 'new', 'york', 'city']
+P_I: atis_airline
+G_S: ['O', 'O', 'O', 'O', 'O', 'B-airport_code', 'O', 'B-city_name', 'I-city_name', 'I-city_name']
+P_S: ['O', 'O', 'O', 'O', 'O', 'B-fromloc.airport_code', 'O', 'B-toloc.city_name', 'I-toloc.city_name', 'I-toloc.city_name']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 800 ['tell', 'me', 'about', 'the', 'ground', 'transportation', 'from', 'nashville', 'airport']
+P_I: atis_airline
+G_S: ['O', 'O', 'O', 'O', 'O', 'O', 'O', 'B-airport_name', 'I-airport_name']
+P_S: ['O', 'O', 'O', 'O', 'O', 'O', 'O', 'B-fromloc.airport_name', 'I-fromloc.airport_name']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 801 ['what', 'are', 'the', 'nonstop', 'flights', 'from', 'cincinnati', 'to', 'charlotte', 'leaving', 'after', 'noon', 'and', 'arriving', 'before', '0', 'pm']
+P_I: atis_flight
+G_S: ['O', 'O', 'O', 'B-flight_stop', 'O', 'O', 'B-fromloc.city_name', 'O', 'B-toloc.city_name', 'O', 'B-depart_time.time_relative', 'B-depart_time.period_of_day', 'O', 'O', 'B-arrive_time.time_relative', 'B-arrive_time.time', 'I-arrive_time.time']
+P_S: ['O', 'O', 'O', 'B-flight_stop', 'O', 'O', 'B-fromloc.city_name', 'O', 'B-toloc.city_name', 'O', 'B-arrive_time.time_relative', 'B-arrive_time.time', 'O', 'O', 'B-arrive_time.time_relative', 'B-arrive_time.time', 'I-arrive_time.time']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 810 ['list', 'the', 'flights', 'from', 'indianapolis', 'to', 'memphis', 'that', 'leave', 'before', 'noon']
+P_I: atis_flight
+G_S: ['O', 'O', 'O', 'O', 'B-fromloc.city_name', 'O', 'B-toloc.city_name', 'O', 'O', 'B-depart_time.time_relative', 'B-depart_time.period_of_day']
+P_S: ['O', 'O', 'O', 'O', 'B-fromloc.city_name', 'O', 'B-toloc.city_name', 'O', 'O', 'B-depart_time.time_relative', 'B-depart_time.time']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 828 ['is', 'there', 'taxi', 'service', 'at', 'the', 'ontario', 'airport']
+P_I: atis_airline
+G_S: ['O', 'O', 'B-transport_type', 'I-transport_type', 'O', 'O', 'B-airport_name', 'I-airport_name']
+P_S: ['O', 'O', 'B-transport_type', 'O', 'O', 'O', 'B-airport_name', 'I-airport_name']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 860 ['can', 'you', 'find', 'me', 'a', 'flight', 'from', 'salt', 'lake', 'city', 'to', 'new', 'york', 'city', 'next', 'saturday', 'before', 'arriving', 'before', '0', 'pm']
+P_I: atis_flight
+G_S: ['O', 'O', 'O', 'O', 'O', 'O', 'O', 'B-fromloc.city_name', 'I-fromloc.city_name', 'I-fromloc.city_name', 'O', 'B-toloc.city_name', 'I-toloc.city_name', 'I-toloc.city_name', 'B-depart_date.date_relative', 'B-depart_date.day_name', 'B-arrive_time.time_relative', 'O', 'B-arrive_time.time_relative', 'B-arrive_time.time', 'I-arrive_time.time']
+P_S: ['O', 'O', 'O', 'O', 'O', 'O', 'O', 'B-fromloc.city_name', 'I-fromloc.city_name', 'I-fromloc.city_name', 'O', 'B-toloc.city_name', 'I-toloc.city_name', 'I-toloc.city_name', 'B-depart_date.date_relative', 'B-depart_date.day_name', 'B-depart_time.time_relative', 'O', 'B-arrive_time.time_relative', 'B-arrive_time.time', 'I-arrive_time.time']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 875 ['please', 'find', 'a', 'flight', 'round', 'trip', 'from', 'los', 'angeles', 'to', 'tacoma', 'washington', 'with', 'a', 'stopover', 'in', 'san', 'francisco', '_UNK', '_UNK', 'the', 'price', 'of', '0', 'dollars', 'for', 'june', 'tenth', '0']
+P_I: atis_flight
+G_S: ['O', 'O', 'O', 'O', 'B-round_trip', 'I-round_trip', 'O', 'B-fromloc.city_name', 'I-fromloc.city_name', 'O', 'B-toloc.city_name', 'B-toloc.state_name', 'O', 'O', 'O', 'O', 'B-stoploc.city_name', 'I-stoploc.city_name', 'B-cost_relative', 'I-cost_relative', 'O', 'O', 'O', 'B-fare_amount', 'I-fare_amount', 'O', 'B-depart_date.month_name', 'B-depart_date.day_number', 'B-depart_date.year']
+P_S: ['O', 'O', 'O', 'O', 'B-round_trip', 'I-round_trip', 'O', 'B-fromloc.city_name', 'I-fromloc.city_name', 'O', 'B-toloc.city_name', 'B-toloc.state_name', 'O', 'O', 'O', 'O', 'B-stoploc.city_name', 'I-stoploc.city_name', 'O', 'O', 'O', 'O', 'O', 'B-fare_amount', 'I-fare_amount', 'O', 'B-depart_date.month_name', 'B-depart_date.day_number', 'B-depart_date.year']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 880 ['find', 'me', 'all', 'the', 'flights', 'from', 'milwaukee', 'to', 'st.', 'louis']
+P_I: atis_flight
+G_S: ['O', 'O', 'O', 'O', 'O', 'O', 'B-fromloc.city_name', 'O', 'B-city_name', 'I-city_name']
+P_S: ['O', 'O', 'O', 'O', 'O', 'O', 'B-fromloc.city_name', 'O', 'B-toloc.city_name', 'I-toloc.city_name']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 881 ['now', 'show', 'me', 'all', 'the', 'flights', 'from', 'st.', 'louis', 'to', 'burbank']
+P_I: atis_flight
+G_S: ['O', 'O', 'O', 'O', 'O', 'O', 'O', 'B-city_name', 'I-city_name', 'O', 'B-toloc.city_name']
+P_S: ['O', 'O', 'O', 'O', 'O', 'O', 'O', 'B-fromloc.city_name', 'I-fromloc.city_name', 'O', 'B-toloc.city_name']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 882 ['is', 'there', 'one', 'airline', 'that', 'flies', 'from', 'burbank', 'to', 'milwaukee', 'milwaukee', 'to', 'st.', 'louis', 'and', 'from', 'st.', 'louis', 'to', 'burbank']
+P_I: atis_ground_service
+G_S: ['O', 'O', 'O', 'O', 'O', 'O', 'O', 'B-fromloc.city_name', 'O', 'B-toloc.city_name', 'B-fromloc.city_name', 'O', 'B-toloc.city_name', 'I-toloc.city_name', 'O', 'O', 'B-fromloc.city_name', 'I-fromloc.city_name', 'O', 'B-toloc.city_name']
+P_S: ['O', 'O', 'O', 'O', 'O', 'O', 'O', 'B-fromloc.city_name', 'O', 'B-toloc.city_name', 'B-stoploc.city_name', 'O', 'B-toloc.city_name', 'I-toloc.city_name', 'O', 'O', 'B-fromloc.city_name', 'I-fromloc.city_name', 'O', 'B-toloc.city_name']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 889 ['please', 'find', 'all', 'the', 'flights', 'from', 'cincinnati', 'to', 'any', 'airport', 'in', 'the', 'new', 'york', 'city', 'area', 'that', 'arrive', 'next', 'saturday', 'before', '0', 'pm']
+P_I: atis_flight
+G_S: ['O', 'O', 'O', 'O', 'O', 'O', 'B-fromloc.city_name', 'O', 'O', 'O', 'O', 'O', 'B-toloc.city_name', 'I-toloc.city_name', 'I-toloc.city_name', 'O', 'O', 'O', 'B-arrive_date.date_relative', 'B-arrive_date.day_name', 'B-arrive_time.time_relative', 'B-arrive_time.time', 'I-arrive_time.time']
+P_S: ['O', 'O', 'O', 'O', 'O', 'O', 'B-fromloc.city_name', 'O', 'O', 'O', 'O', 'O', 'B-stoploc.city_name', 'I-stoploc.city_name', 'I-stoploc.city_name', 'O', 'O', 'O', 'B-arrive_date.date_relative', 'B-arrive_date.day_name', 'B-arrive_time.time_relative', 'B-arrive_time.time', 'I-arrive_time.time']
+------------------------------------------------------------------------------------------------------
+
+Input at line: 890 ['find', 'me', 'a', 'flight', 'from', 'cincinnati', 'to', 'any', 'airport', 'in', 'the', 'new', 'york', 'city', 'area']
+P_I: atis_flight
+G_S: ['O', 'O', 'O', 'O', 'O', 'B-fromloc.city_name', 'O', 'O', 'O', 'O', 'O', 'B-toloc.city_name', 'I-toloc.city_name', 'I-toloc.city_name', 'O']
+P_S: ['O', 'O', 'O', 'O', 'O', 'B-fromloc.city_name', 'O', 'O', 'O', 'O', 'O', 'B-stoploc.city_name', 'I-stoploc.city_name', 'I-stoploc.city_name', 'O']
+------------------------------------------------------------------------------------------------------
+

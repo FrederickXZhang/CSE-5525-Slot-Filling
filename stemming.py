@@ -1,3 +1,8 @@
+#################################################################################
+# Author: Frederick X. Zhang
+# Usage: python3 stemming.py SF-ID-Network-For-NLU/data/atis/train/seq.in SF-ID-Network-For-NLU/data/atis/train/seq.in.new
+################################################################################
+
 import sys
 import numpy
 import nltk

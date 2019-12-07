@@ -42,7 +42,7 @@ parser.add_argument("--patience", type=int, default=40, help="Patience to wait b
 parser.add_argument("--run_name", type=str, default='capsule_nlu', help="Run name.")
 
 #Bert
-parser.add_argument("--use_bert", type=bool, default=True, help="Use BERT embeddings.", dest='use_bert')
+parser.add_argument("--use_bert", type=bool, default=False, help="Use BERT embeddings.", dest='use_bert')
 
 #Embedding
 parser.add_argument("--use_embedding", type=str, default='1', help="""use pre-trained embedding""")

@@ -1,2 +1,0 @@
-model_checkpoint_path: "capsule_nlu_1.ckpt"
-all_model_checkpoint_paths: "capsule_nlu_1.ckpt"

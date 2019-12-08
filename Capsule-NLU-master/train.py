@@ -45,6 +45,7 @@ parser.add_argument("--run_name", type=str, default='capsule_nlu', help="Run nam
 
 #Bert
 parser.add_argument("--use_bert", type=bool, default=False, help="Use BERT embeddings.", dest='use_bert')
+parser.add_argument("--bert_ip", type=str, default='', help="provide bert-server ip for bert client")
 
 #Embedding
 parser.add_argument("--use_embedding", type=str, default='1', help="""use pre-trained embedding""")
@@ -63,7 +64,10 @@ parser.add_argument("--slot_file", type=str, default='seq.out', help="Slot file 
 parser.add_argument("--intent_file", type=str, default='label', help="Intent file name.")
 
 #Unk
-parser.add_argument("--unk", type=str, default='', help="Path to training data files.")
+parser.add_argument("--use_unk", type=bool, default=False, help="to decide whether to use unk-enhanced data")
+parser.add_argument("--unk_ratio", type=float, default='', help="unk_enhanced ratio")
+parser.add_argument("--unk_threshold", type=int, default='', help="unk_enhanced threshold")
+parser.add_argument("--unk_priority", type=str, default='', help="unk_enhanced priority. Only the following three options are available: full, entity, outside")
 
 arg = parser.parse_args()
 logs_path = './log/' + arg.run_name
@@ -309,12 +313,19 @@ with tf.Session(config=tf.ConfigProto(allow_soft_placement=False, log_device_pla
         if data_processor == None:
           
            #Unk
-           unker = UNKer(os.path.join(full_train_path, arg.input_file), os.path.join(full_train_path, arg.input_file+arg.unk), os.path.join(full_train_path, arg.slot_file), ratio=0.9, threshold=20, priority='full')
-          
-            data_processor = DataProcessor(os.path.join(full_train_path, arg.input_file+arg.unk),
-                                           os.path.join(full_train_path, arg.slot_file),
-                                           os.path.join(full_train_path, arg.intent_file), in_vocab, slot_vocab,
-                                           intent_vocab, shuffle=True, use_bert=arg.use_bert)
+            # For unk purpose
+            if arg.use_unk == True:
+                unker = UNKer(os.path.join(full_train_path, arg.input_file), os.path.join(full_train_path, arg.input_file+".unk."+arg.unk_priority), os.path.join(full_train_path, arg.slot_file), 
+                                            ratio=arg.unk_ratio, threshold=arg.unk_threshold, priority=arg.unk_priority)
+                data_processor = DataProcessor(os.path.join(full_train_path, arg.input_file+".unk."+arg.unk_priority),
+                    os.path.join(full_train_path, arg.slot_file),
+                    os.path.join(full_train_path, arg.intent_file), in_vocab, slot_vocab,
+                                intent_vocab, shuffle=True, use_bert=arg.use_bert)
+            else:
+                data_processor = DataProcessor(os.path.join(full_train_path, arg.input_file),
+                    os.path.join(full_train_path, arg.slot_file),
+                    os.path.join(full_train_path, arg.intent_file), in_vocab, slot_vocab,
+                                intent_vocab, shuffle=True, use_bert=arg.use_bert)
 
         in_data, slot_data, slot_weight, length, intents, in_seq, slot_seq, intent_seq = data_processor.get_batch(arg.batch_size)
         input_seq_embeddings = np.empty(shape=[0, 0, arg.embed_dim])

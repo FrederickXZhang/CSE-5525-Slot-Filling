@@ -5,7 +5,6 @@
 
 import sys
 import numpy
-import nltk
 import random
 
 class UNKer(object):

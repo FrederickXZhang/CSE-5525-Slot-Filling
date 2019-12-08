@@ -11,9 +11,8 @@ import tensorflow as tf
 from utils import margin_loss
 from capsule_masked import Capsule
 
-import pandas as pd
-
 from utils import createVocabulary, loadVocabulary, computeF1Score, DataProcessor, load_embedding, build_embedd_table
+#Unk
 from unk_enhance import*
 
 # Processing Units logs
@@ -52,7 +51,7 @@ parser.add_argument("--use_embedding", type=str, default='1', help="""use pre-tr
 parser.add_argument("--embedding_path", type=str, default='', help="embedding array's path.")
 
 # Model and Data
-parser.add_argument("--dataset", type=str, default='atis', help="""Type 'snips' to use dataset provided by us or enter what ever you named your own dataset.
+parser.add_argument("--dataset", type=str, default='snips', help="""Type 'snips' to use dataset provided by us or enter what ever you named your own dataset.
                 Note, if you don't want to use this part, enter --dataset=''. It can not be None""")
 parser.add_argument("--model_path", type=str, default='./model', help="Path to save model.")
 parser.add_argument("--vocab_path", type=str, default='./vocab', help="Path to vocabulary files.")
@@ -263,13 +262,6 @@ inference_inputs = [input_data, sequence_length]
 
 saver = tf.train.Saver()
 
-def save_current_results(epoch, records):
-    logging.info("Saving results of Epoch {}".format(str(epoch)))
-    columns = ["split", "step", "epochs", "eval_loss", "slot_f1", "intent_accuracy", "semantic_accuracy"]
-    df = pd.DataFrame(records, columns=columns)
-    df.to_csv("./training_output.csv", index=False)
-    logging.info("Results saved!")
-
 def get_bert_embeddings(in_seq):
     input_seq_embeddings = bc.encode([s.split() for s in in_seq], is_tokenized=True).copy()
     dims = input_seq_embeddings.shape
@@ -304,9 +296,6 @@ with tf.Session(config=tf.ConfigProto(allow_soft_placement=False, log_device_pla
     test_intent = 0
     valid_err = 0
     test_err = 0
-    
-    #best score
-    best_epoch_num = 0
 
     # Load from saved checkpoints
     # saver.restore(sess, './model/' + arg.run_name + ".ckpt")
@@ -318,10 +307,10 @@ with tf.Session(config=tf.ConfigProto(allow_soft_placement=False, log_device_pla
 
     while True:
         if data_processor == None:
-            
-            #Unk
-            unker = UNKer(os.path.join(full_train_path, arg.input_file), os.path.join(full_train_path, arg.input_file+arg.unk), os.path.join(full_train_path, arg.slot_file), ratio=0.9, threshold=20, priority='full')
-            
+          
+           #Unk
+           unker = UNKer(os.path.join(full_train_path, arg.input_file), os.path.join(full_train_path, arg.input_file+arg.unk), os.path.join(full_train_path, arg.slot_file), ratio=0.9, threshold=20, priority='full')
+          
             data_processor = DataProcessor(os.path.join(full_train_path, arg.input_file+arg.unk),
                                            os.path.join(full_train_path, arg.slot_file),
                                            os.path.join(full_train_path, arg.intent_file), in_vocab, slot_vocab,

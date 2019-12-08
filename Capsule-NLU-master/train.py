@@ -12,6 +12,8 @@ from utils import margin_loss
 from capsule_masked import Capsule
 
 from utils import createVocabulary, loadVocabulary, computeF1Score, DataProcessor, load_embedding, build_embedd_table
+#Unk
+from unk_enhance import*
 
 # Processing Units logs
 log_device_placement = False
@@ -59,6 +61,9 @@ parser.add_argument("--valid_data_path", type=str, default='valid', help="Path t
 parser.add_argument("--input_file", type=str, default='seq.in', help="Input file name.")
 parser.add_argument("--slot_file", type=str, default='seq.out', help="Slot file name.")
 parser.add_argument("--intent_file", type=str, default='label', help="Intent file name.")
+
+#Unk
+parser.add_argument("--unk", type=str, default='', help="Path to training data files.")
 
 arg = parser.parse_args()
 logs_path = './log/' + arg.run_name
@@ -302,7 +307,11 @@ with tf.Session(config=tf.ConfigProto(allow_soft_placement=False, log_device_pla
 
     while True:
         if data_processor == None:
-            data_processor = DataProcessor(os.path.join(full_train_path, arg.input_file),
+          
+           #Unk
+           unker = UNKer(os.path.join(full_train_path, arg.input_file), os.path.join(full_train_path, arg.input_file+arg.unk), os.path.join(full_train_path, arg.slot_file), ratio=0.9, threshold=20, priority='full')
+          
+            data_processor = DataProcessor(os.path.join(full_train_path, arg.input_file+arg.unk),
                                            os.path.join(full_train_path, arg.slot_file),
                                            os.path.join(full_train_path, arg.intent_file), in_vocab, slot_vocab,
                                            intent_vocab, shuffle=True, use_bert=arg.use_bert)

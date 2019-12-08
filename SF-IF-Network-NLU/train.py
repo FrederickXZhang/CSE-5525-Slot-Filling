@@ -14,7 +14,7 @@ from unk_enhance import*
 os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 
 parser = argparse.ArgumentParser(allow_abbrev=False)
-parser.add_argument("--num_units", type=int, default=64, help="Network size.", dest='layer_size')
+parser.add_argument("--num_units", type=int, default=64, help="Network size. Actually, it's the dim of hidden variable", dest='layer_size')
 parser.add_argument("--model_type", type=str, default='full', help="""full(default) | intent_only
                                                                     full: full attention model
                                                                     intent_only: intent attention model""")
@@ -47,9 +47,22 @@ parser.add_argument("--intent_file", type=str, default='label', help="Intent fil
 parser.add_argument("--embedding_path", type=str, default='', help="embedding array's path.")
 parser.add_argument("--embed_dim", type=int, default=300, help="Embedding dim.", dest='embed_dim')
 parser.add_argument("--use_bert", type=bool, default=False, help="Use BERT embeddings.", dest='use_bert')
-parser.add_argument("--unk", type=str, default='', help="Path to training data files.")
+parser.add_argument("--use_unk", type=bool, default=False, help="to decide whether to use unk-enhanced data")
+parser.add_argument("--unk_ratio", type=float, default='', help="unk_enhanced ratio")
+parser.add_argument("--unk_threshold", type=int, default='', help="unk_enhanced threshold")
+parser.add_argument("--unk_priority", type=str, default='', help="unk_enhanced priority. Only the following three options are available: full, entity, outside")
+parser.add_argument("--intent_guide_slot", type=bool, default=False, help="decide whether to use predicted intent to help guide the prediction of slot prediction")
+parser.add_argument("--bert_ip", type=str, default='', help="provide bert-server ip for bert client")
+
 
 arg = parser.parse_args()
+
+if arg.embedding_path == "" and arg.use_unk == False:
+    arg.embed_dim = 64
+elif use_bert == True:
+    arg.embed_dim = 768
+    
+
 if arg.dataset == 'atis':
     arg.model_type = 'intent_only'
 else:
@@ -244,6 +257,10 @@ def createModel(input_data, in_vocabulary_size, sequence_length, slots, slot_siz
                     r_intent = r + intent_context_states
 
                     intent_output = tf.concat([r_intent, intent_input], 1)
+        # if arg.intent_guide_slot == True:
+        #     print(slot_output)
+        #     print(intent_output)
+        #     slot_output = tf.concat([slot_output, intent_output], 1)
 
     with tf.variable_scope('intent_proj'):
         intent = core_rnn_cell._linear(intent_output, intent_size, True)
@@ -268,6 +285,7 @@ with tf.variable_scope('model'):
     input_raw = input_sequence_embeddings if arg.use_bert else input_data
     training_outputs = createModel(input_raw, len(in_vocab['vocab']), sequence_length, slots, len(slot_vocab['vocab']),
                                    len(intent_vocab['vocab']), layer_size=arg.layer_size, embed_dim=arg.embed_dim)
+
 
 slots_shape = tf.shape(slots)
 slots_reshape = tf.reshape(slots, [-1])
@@ -388,19 +406,25 @@ with tf.Session(config=tf.ConfigProto(gpu_options=gpu_options)) as sess:
 
     if arg.use_bert:
         from bert_serving.client import BertClient
-        bc = BertClient()
+        bc = BertClient(ip=arg.bert_ip)
 
     while True:
         if data_processor == None:
             
             # For unk purpose
-            unker = UNKer(os.path.join(full_train_path, arg.input_file), os.path.join(full_train_path, arg.input_file+arg.unk), os.path.join(full_train_path, arg.slot_file), ratio=0.9, threshold=20, priority='full')
-            
-            
-            data_processor = DataProcessor(os.path.join(full_train_path, arg.input_file+arg.unk),
-                                           os.path.join(full_train_path, arg.slot_file),
-                                           os.path.join(full_train_path, arg.intent_file), in_vocab, slot_vocab,
-                                           intent_vocab, use_bert=arg.use_bert)
+            if arg.use_unk == True:
+                unker = UNKer(os.path.join(full_train_path, arg.input_file), os.path.join(full_train_path, arg.input_file+".unk."+arg.unk_priority), os.path.join(full_train_path, arg.slot_file), 
+                                            ratio=arg.unk_ratio, threshold=arg.unk_threshold, priority=arg.unk_priority)
+                data_processor = DataProcessor(os.path.join(full_train_path, arg.input_file+".unk."+arg.unk_priority),
+                    os.path.join(full_train_path, arg.slot_file),
+                    os.path.join(full_train_path, arg.intent_file), in_vocab, slot_vocab,
+                                intent_vocab, use_bert=arg.use_bert)
+            else:
+                data_processor = DataProcessor(os.path.join(full_train_path, arg.input_file),
+                    os.path.join(full_train_path, arg.slot_file),
+                    os.path.join(full_train_path, arg.intent_file), in_vocab, slot_vocab,
+                                intent_vocab, use_bert=arg.use_bert)
+
 
         in_data, slot_data, slot_weight, length, intents, input_seq, _, _ = data_processor.get_batch(arg.batch_size)
         input_seq_embeddings = np.empty(shape=[0, 0, arg.embed_dim])
@@ -459,6 +483,7 @@ with tf.Session(config=tf.ConfigProto(gpu_options=gpu_options)) as sess:
                     feed_dict = {input_data.name: in_data, sequence_length.name: length,
                                  input_sequence_embeddings.name: input_seq_embeddings}
                     ret = sess.run(inference_outputs, feed_dict)
+    
                     for i in ret[0]:
                         pred_intents.append(np.argmax(i))
                     for i in intents:

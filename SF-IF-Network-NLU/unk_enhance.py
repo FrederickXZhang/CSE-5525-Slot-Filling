@@ -6,6 +6,7 @@
 import sys
 import numpy
 import random
+random.seed(7) 
 
 class UNKer(object):
     # priority can only be either entity, outside or full.

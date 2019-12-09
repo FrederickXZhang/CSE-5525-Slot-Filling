@@ -23,7 +23,7 @@ parser = argparse.ArgumentParser(allow_abbrev=False)
 # Network
 parser.add_argument("--num_units", type=int, default=512, help="Network size.", dest='layer_size')
 parser.add_argument("--embed_dim", type=int, default=1024, help="Embedding dim.", dest='embed_dim')
-parser.add_argument("--intent_dim", type=int, default=256, help="Intent dim.", dest='intent_dim')
+parser.add_argument("--intent_dim", type=int, default=128, help="Intent dim.", dest='intent_dim')
 parser.add_argument("--model_type", type=str, default='full', help="""full(default) | without_rerouting.
                                                                     full: full model with re-routing
                                                                     without_rerouting: model without re-routing""")
@@ -132,7 +132,7 @@ intent_dim = arg.intent_dim
 
 # Create training model
 def build_model(input_data, input_size, sequence_length, slot_size, intent_size, intent_dim, layer_size, embed_dim,
-                num_rnn=1, isTraining=True, iter_slot=3, iter_intent=3, re_routing=True):
+                num_rnn=1, isTraining=True, iter_slot=2, iter_intent=2, re_routing=True):
     cell_fw_list = tf.contrib.rnn.MultiRNNCell([tf.contrib.rnn.BasicLSTMCell(layer_size) for _ in range(num_rnn)])
     cell_bw_list = tf.contrib.rnn.MultiRNNCell([tf.contrib.rnn.BasicLSTMCell(layer_size) for _ in range(num_rnn)])
 

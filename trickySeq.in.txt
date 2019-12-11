@@ -1,0 +1,216 @@
+for flights from chicago to columbus show what day of the week that has cheap fare
+for flights from springfield to columbus show what day of the week that has cheap fare
+for flights from houston to columbus show what day of the week that has cheap fare
+for flights from phoenix to columbus show what day of the week that has cheap fare
+for flights from dallas to columbus show what day of the week that has cheap fare
+for flights from columbus to chicago show what day of the week that has cheap fare
+find me all the flights from people’s republic of china to usa
+find me all the flights from united states of america to china
+find me all the flights from the republic of benin to china
+find me all the flights from republic of cabo verde to china
+find me all the flights from china to the central african republic
+find me all the flights from united states of america to people’s republic of china
+list the best 10 airports in california
+list the best 10 airports in ohio
+list the best 10 airports in illinois
+list the best 10 airports in texas
+list the best 10 airports in arizona
+list the best 10 airports in florida
+find me flights from chicago to columbus departing at chicago and then from columbus to new york departing at columbus
+find me flights from springfield to columbus departing at chicago and then from columbus to new york departing at columbus
+find me flights from houston to columbus departing at chicago and then from columbus to new york departing at columbus
+find me flights from phoenix to columbus departing at chicago and then from columbus to new york departing at columbus
+find me flights from dallas to columbus departing at chicago and then from columbus to new york departing at columbus
+find me flights from columbus to dallas departing at chicago and then from columbus to new york departing at columbus
+at the boston airport are there any taxi services available
+at the chicago airport are there any taxi services available
+at the houston airport are there any taxi services available
+at the phoenix airport are there any taxi services available
+at the dallas airport are there any taxi services available
+at the columbus airport are there any taxi services available
+list flights to columbus departing from chicago
+list flights to boston departing from chicago
+list flights to houston departing from chicago
+list flights to phoenix departing from chicago
+list flights to dallas departing from chicago
+list flights to springfield departing from chicago
+for flights from pittsburgh to atlanta arriving after 9 pm are there air restrictions
+for flights from chicago to atlanta arriving after 9 pm are there air restrictions
+for flights from columbus to atlanta arriving after 9 pm are there air restrictions
+for flights from dallas to atlanta arriving after 9 pm are there air restrictions
+for flights from houston to atlanta arriving after 9 pm are there air restrictions
+for flights from phoenix to atlanta arriving after 9 pm are there air restrictions
+how early should I get to the miami airport for my flight at 1 pm
+how early should I get to the chicago airport for my flight at 2 pm
+how early should I get to the columbus airport for my flight at 3 pm
+how early should I get to the boston airport for my flight at 4 pm
+how early should I get to the dallas airport for my flight at 5 pm
+how early should I get to the dallas airport for my flight at 6 pm
+how long does it take to get through a checkpoint at mco
+how long does it take to get through a checkpoint at bwi
+how long does it take to get through a checkpoint at hou
+how long does it take to get through a checkpoint at lax
+how long does it take to get through a checkpoint at msp
+how long does it take to get through a checkpoint at oak
+do you need to be at the chicago airport at least 2 hours before your flight?
+do you need to be at the columbus airport at least 2 hours before your flight?
+do you need to be at the miami airport at least 2 hours before your flight?
+do you need to be at the dallas airport at least 2 hours before your flight?
+do you need to be at the atlanta airport at least 2 hours before your flight?
+do you need to be at the chicago airport at least 3 hours before your flight?
+find me a list of airports in new york that has good ground transportations after midnight
+find me a list of airports in san jose that has good ground transportations after midnight
+find me a list of airports in san antonio that has good ground transportations after midnight
+find me a list of airports in los angeles that has good ground transportations after midnight
+find me a list of airports in san diego that has good ground transportations after midnight
+find me a list of airports in las vegas that has good ground transportations after midnight
+what is the fare for flights from columbus to chicago departing after 7 pm on tuesday
+what is the fare for flights from boston to chicago departing after 8 pm on tuesday
+what is the fare for flights from columbus to chicago departing after 9 pm on tuesday
+what is the fare for flights from miami to chicago departing after 10 pm on tuesday
+what is the fare for flights from columbus to chicago departing after 11 pm on monday
+what is the fare for flights from dallas to chicago departing after 7 pm on tuesday
+what meal plans are available for my flight from columbus to chicago on tuesday
+what meal plans are available for my flight from columbus to chicago on monday
+what meal plans are available for my flight from columbus to chicago on sunday
+what meal plans are available for my flight from columbus to dallas on tuesday
+what meal plans are available for my flight from columbus to houston on tuesday
+what meal plans are available for my flight from columbus to springfield on tuesday
+which airport has a name of mco in the us
+which airport has a name of atl in the us
+which airport has a name of ord in the us
+which airport has a name of lax in the us
+which airport has a name of sin in the us
+which airport has a name of yyz in the us
+which airline has cheapest fare for a fly from chicago to columbus on tuesday
+which airline has cheapest fare for a fly from chicago to dallas on tuesday
+which airline has cheapest fare for a fly from chicago to houston on tuesday
+which airline has cheapest fare for a fly from chicago to springfield on tuesday
+which airline has cheapest fare for a fly from chicago to columbus on thursday
+which airline has cheapest fare for a fly from chicago to columbus on friday
+what is the fare for the earliest flight to chicago from columbus
+what is the fare for the earliest flight to chicago from dallas
+what is the fare for the earliest flight to chicago from phoenix
+what is the fare for the earliest flight to chicago from springfield
+what is the fare for the earliest flight to chicago from boston
+what is the fare for the earliest flight to chicago from houston
+what type of ground transportation is available after my flight from chicago to columbus arriving after midnight
+what type of ground transportation is available after my flight from chicago to columbus arriving before midnight
+what type of ground transportation is available after my flight from chicago to dallas arriving after midnight
+what type of ground transportation is available after my flight from chicago to houston arriving after midnight
+what type of ground transportation is available after my flight from chicago to boston arriving after midnight
+what type of ground transportation is available after my flight from chicago to springfield arriving after midnight
+list out the flight times for flights from chicago to columbus on august first
+list out the flight times for flights from chicago to columbus on august second
+list out the flight times for flights from chicago to columbus on august fourth
+list out the flight times for flights from chicago to columbus on august fifth
+list out the flight times for flights from houston to columbus on august first
+list out the flight times for flights from boston to columbus on august first
+what type of ground transportation are there for cities served by canadian airlines international
+what type of ground transportation are there for cities served by american airlines international
+what type of ground transportation are there for cities served by korean air international
+what type of ground transportation are there for cities served by china airlines international
+what type of ground transportation are there for cities served by japan airlines international
+what type of ground transportation are there for cities served by thai airways international
+what is the number of first class flights on american airlines with a fare of 1000 dollars or less
+what is the number of first class flights on american airlines with a fare of 1500 dollars or less
+what is the number of first class flights on american airlines with a fare of 2000 dollars or less
+what is the number of first class flights on china airlines with a fare of 1000 dollars or less
+what is the number of first class flights on japan airlines with a fare of 1000 dollars or less
+what is the number of first class flights on thai airlines with a fare of 1000 dollars or less
+while there are cheap flights from chicago to columbus I would like to get cheap flights from chicago to seattle
+while there are cheap flights from chicago to columbus I would like to get cheap flights from dallas to seattle
+while there are cheap flights from chicago to columbus I would like to get cheap flights from houston to seattle
+while there are cheap flights from chicago to columbus I would like to get cheap flights from boston to seattle
+while there are cheap flights from chicago to dallas I would like to get cheap flights from chicago to seattle
+while there are cheap flights from chicago to houston I would like to get cheap flights from chicago to seattle
+why do flights arriving on chicago on june first have a better ground transportation than my flight arriving on june second
+why do flights arriving on chicago on june first have a better ground transportation than my flight arriving on june third
+why do flights arriving on chicago on june first have a better ground transportation than my flight arriving on june fourth
+why do flights arriving on chicago on june first have a better ground transportation than my flight arriving on june fifth
+why do flights arriving on dallas on june first have a better ground transportation than my flight arriving on june second
+why do flights arriving on boston on june first have a better ground transportation than my flight arriving on june second
+with boeing 737 747 and 757 available for flights from columbus to chicago my flights are all on the smallest model
+with boeing 737 747 and 767 available for flights from columbus to chicago my flights are all on the smallest model
+with boeing 737 747 and 727 available for flights from columbus to chicago my flights are all on the smallest model
+with boeing 737 747 and 747 available for flights from columbus to chicago my flights are all on the smallest model
+with boeing 737 747 and 787 available for flights from columbus to chicago my flights are all on the smallest model
+with boeing 737 747 and 787-10x available for flights from columbus to chicago my flights are all on the smallest model
+even though other flights are all from columbus to chicago can you find me a flight from columbus to seattle
+even though other flights are all from columbus to dallas can you find me a flight from columbus to seattle
+even though other flights are all from columbus to houston can you find me a flight from columbus to seattle
+even though other flights are all from columbus to seattle can you find me a flight from columbus to seattle
+even though other flights are all from columbus to chicago can you find me a flight from dallas to seattle
+even though other flights are all from columbus to chicago can you find me a flight from houston to seattle
+with all other flights from chicago to columbus arriving by 9 pm why would my flight arrive after 10 pm
+with all other flights from chicago to columbus arriving by 8 pm why would my flight arrive after 10 pm
+with all other flights from chicago to columbus arriving by 7 pm why would my flight arrive after 10 pm
+with all other flights from chicago to columbus arriving by 6 pm why would my flight arrive after 10 pm
+with all other flights from chicago to columbus arriving by 9 pm why would my flight arrive after 11 pm
+with all other flights from chicago to columbus arriving by 9 pm why would my flight arrive after 1130 pm
+i think that the fare for an international flight from us to china has a fare of 1500 dollars but why would my flight from chicago to los angeles have a fare of 2000 dollars
+i think that the fare for an international flight from us to china has a fare of 1500 dollars but why would my flight from chicago to los angeles have a fare of 2100 dollars
+i think that the fare for an international flight from us to china has a fare of 1500 dollars but why would my flight from chicago to los angeles have a fare of 2200 dollars
+i think that the fare for an international flight from us to china has a fare of 1500 dollars but why would my flight from chicago to los angeles have a fare of 2300 dollars
+i think that the fare for an international flight from us to china has a fare of 1500 dollars but why would my flight from chicago to los angeles have a fare of 2400 dollars
+i think that the fare for an international flight from us to china has a fare of 1500 dollars but why would my flight from chicago to los angeles have a fare of 2500 dollars
+while ground transportation to san francisco airport is common are there any ground transportation to columbus airport
+while ground transportation to san francisco airport is common are there any ground transportation to dallas airport
+while ground transportation to san francisco airport is common are there any ground transportation to springfield airport
+while ground transportation to san francisco airport is common are there any ground transportation to houston airport
+while ground transportation to san francisco airport is common are there any ground transportation to boston airport
+while ground transportation to new york airport is common are there any ground transportation to columbus airport
+other flights from chicago to columbus serve meal yet my flight only serve a snack
+other flights from chicago to houston serve meal yet my flight only serve a snack
+other flights from chicago to boston serve meal yet my flight only serve a snack
+other flights from chicago to dallas serve meal yet my flight only serve a snack
+other flights from chicago to phoenix serve meal yet my flight only serve a snack
+other flights from chicago to springfield serve meal yet my flight only serve a snack
+many flights to columbus depart from chicago so why my flight departs from new york
+many flights to columbus depart from chicago so why my flight departs from new jersey
+many flights to columbus depart from chicago so why my flight departs from san jose
+many flights to columbus depart from chicago so why my flight departs from san antonio
+many flights to columbus depart from chicago so why my flight departs from san diego
+many flights to columbus depart from chicago so why my flight departs from los angeles
+I know the seating capacity of a boeing 737 yet what is the seating capacity of my airplane boeing 747
+I know the seating capacity of a boeing 737 yet what is the seating capacity of my airplane boeing 727
+I know the seating capacity of a boeing 737 yet what is the seating capacity of my airplane boeing 757
+I know the seating capacity of a boeing 737 yet what is the seating capacity of my airplane boeing 767
+I know the seating capacity of a boeing 737 yet what is the seating capacity of my airplane boeing 787
+I know the seating capacity of a boeing 737 yet what is the seating capacity of my airplane boeing 797
+show me flights to new york on saturday and return on sunday
+show me flights to new york on monday and return on sunday
+show me flights to new york on tuesday and return on sunday
+show me flights to new york on thursday and return on sunday
+show me flights to new york on friday and return on sunday
+show me flights to new york on wednesday and return on sunday
+find me flights that will depart to new york on next thursday
+find me flights that will depart to new york on next monday
+find me flights that will depart to new york on next tuesday
+find me flights that will depart to new york on next friday
+find me flights that will depart to new york on next sunday
+find me flights that will depart to new york on next wednesday
+show me flights to los angeles from columbus via chicago
+show me flights to los angeles from columbus via dallas
+show me flights to los angeles from columbus via boston
+show me flights to los angeles from columbus via houston
+show me flights to los angeles from columbus via phoenix
+show me flights to los angeles from columbus via springfield
+recommend a flight to me since I want to fly from columbus to china
+recommend a flight to me since I want to fly from dallas to china
+recommend a flight to me since I want to fly from boston to china
+recommend a flight to me since I want to fly from houston to china
+recommend a flight to me since I want to fly from springfield to china
+recommend a flight to me since I want to fly from phoenix to china
+where is newark international airport
+where is dallas international airport
+where is orlando international airport
+where is denver international airport
+where is mccarran international airport
+where is dulles international airport
+show me all airports in columbus
+show me all airports in dallas
+show me all airports in houston
+show me all airports in boston
+show me all airports in springfield
+show me all airports in chicago

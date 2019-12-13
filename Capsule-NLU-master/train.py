@@ -23,7 +23,7 @@ parser = argparse.ArgumentParser(allow_abbrev=False)
 # Network
 parser.add_argument("--num_units", type=int, default=512, help="Network size.", dest='layer_size')
 parser.add_argument("--embed_dim", type=int, default=1024, help="Embedding dim.", dest='embed_dim')
-parser.add_argument("--intent_dim", type=int, default=256, help="Intent dim.", dest='intent_dim')
+parser.add_argument("--intent_dim", type=int, default=128, help="Intent dim.", dest='intent_dim')
 parser.add_argument("--model_type", type=str, default='full', help="""full(default) | without_rerouting.
                                                                     full: full model with re-routing
                                                                     without_rerouting: model without re-routing""")
@@ -37,7 +37,7 @@ parser.add_argument("--batch_size", type=int, default=8, help="Batch size.")
 parser.add_argument("--learning_rate", type=float, default=0.001, help="Batch size.")
 parser.add_argument("--margin", type=float, default=0.4, help="Margin in the max-margin loss.")
 parser.add_argument("--downweight", type=float, default=0.5, help="Downweight for the max-margin loss.")
-parser.add_argument("--max_epochs", type=int, default=60, help="Max epochs to train.")
+parser.add_argument("--max_epochs", type=int, default=80, help="Max epochs to train.")
 parser.add_argument("--no_early_stop", action='store_false', dest='early_stop',
                     help="Disable early stop, which is based on sentence level accuracy.")
 parser.add_argument("--patience", type=int, default=40, help="Patience to wait before stop.")
@@ -50,10 +50,10 @@ parser.add_argument("--bert_ip", type=str, default='', help="provide bert-server
 
 #Embedding
 parser.add_argument("--use_embedding", type=str, default='1', help="""use pre-trained embedding""")
-parser.add_argument("--embedding_path", type=str, default='../../nqg/glove.840B.300d.txt')
+parser.add_argument("--embedding_path", type=str, default='')
 
 # Model and Data
-parser.add_argument("--dataset", type=str, default='atis', help="""Type 'snips' to use dataset provided by us or enter what ever you named your own dataset.
+parser.add_argument("--dataset", type=str, default='snips', help="""Type 'snips' to use dataset provided by us or enter what ever you named your own dataset.
                 Note, if you don't want to use this part, enter --dataset=''. It can not be None""")
 parser.add_argument("--model_path", type=str, default='./model', help="Path to save model.")
 parser.add_argument("--vocab_path", type=str, default='./vocab', help="Path to vocabulary files.")
@@ -62,14 +62,14 @@ parser.add_argument("--test_data_path", type=str, default='test', help="Path to 
 parser.add_argument("--valid_data_path", type=str, default='valid', help="Path to validation data files.")
 
 ##
-parser.add_argument("--input_file", type=str, default='seq.in', help="Input file name.")
+parser.add_argument("--input_file", type=str, default='seq.in.new', help="Input file name.")
 parser.add_argument("--slot_file", type=str, default='seq.out', help="Slot file name.")
 parser.add_argument("--intent_file", type=str, default='label', help="Intent file name.")
 
 #Unk
-parser.add_argument("--use_unk", type=bool, default=False, help="to decide whether to use unk-enhanced data")
-parser.add_argument("--unk_ratio", type=float, default=0.25, help="unk_enhanced ratio")
-parser.add_argument("--unk_threshold", type=int, default=20, help="unk_enhanced threshold")
+parser.add_argument("--use_unk", type=bool, default=True, help="to decide whether to use unk-enhanced data")
+parser.add_argument("--unk_ratio", type=float, default=0.15, help="unk_enhanced ratio")
+parser.add_argument("--unk_threshold", type=int, default=5, help="unk_enhanced threshold")
 parser.add_argument("--unk_priority", type=str, default='entity', help="unk_enhanced priority. Only the following three options are available: full, entity, outside")
 
 
@@ -233,7 +233,7 @@ slot_params = []
 for p in params:
     if 'slot' in p.name or 'embedding' in p.name:
         slot_params.append(p)
-intent_params = []
+intent_params = tf.trainable_variables()
 for p in params:
     if 'intent' in p.name:
         intent_params.append(p)

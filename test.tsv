@@ -1,0 +1,6 @@
+what be the flight which depart from _san_francisco fly to _washington via _indianapolis and arrive by _9_pm
+O O O O O O O fromloc.city_name O O toloc.city_name O stoploc.city_name O O arrive_time.time_relative arrive_time.time
+atis_flight
+which airline fly from _boston to _washington _dc via other city
+O O O O fromloc.city_name O toloc.city_name toloc.state_code O O O
+atis_airfare

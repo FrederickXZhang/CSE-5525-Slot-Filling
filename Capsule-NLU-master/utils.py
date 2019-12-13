@@ -257,9 +257,9 @@ def bert_sentence_wrap(s):
 
 class DataProcessor(object):
     def __init__(self, in_path, slot_path, intent_path, in_vocab, slot_vocab, intent_vocab, shuffle=False, use_bert=False):
-        self.__fd_in = open(in_path, 'r', encoding='utf-8').readlines()
-        self.__fd_slot = open(slot_path, 'r', encoding='utf-8').readlines()
-        self.__fd_intent = open(intent_path, 'r', encoding='utf-8').readlines()
+        self.__fd_in = open(in_path, 'r').readlines()
+        self.__fd_slot = open(slot_path, 'r').readlines()
+        self.__fd_intent = open(intent_path, 'r').readlines()
         if shuffle:
             self.shuffle()
         self.__in_vocab = in_vocab

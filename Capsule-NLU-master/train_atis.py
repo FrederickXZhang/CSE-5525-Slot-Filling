@@ -23,13 +23,13 @@ parser = argparse.ArgumentParser(allow_abbrev=False)
 # Network
 parser.add_argument("--num_units", type=int, default=512, help="Network size.", dest='layer_size')
 parser.add_argument("--embed_dim", type=int, default=1024, help="Embedding dim.", dest='embed_dim')
-parser.add_argument("--intent_dim", type=int, default=128, help="Intent dim.", dest='intent_dim')
+parser.add_argument("--intent_dim", type=int, default=256, help="Intent dim.", dest='intent_dim')
 parser.add_argument("--model_type", type=str, default='full', help="""full(default) | without_rerouting.
                                                                     full: full model with re-routing
                                                                     without_rerouting: model without re-routing""")
 parser.add_argument("--num_rnn", type=int, default=1, help="Num of layers for stacked RNNs.")
-parser.add_argument("--iter_slot", type=int, default=2, help="Num of iteration for slots.")
-parser.add_argument("--iter_intent", type=int, default=2, help="Num of iteration for intents.")
+parser.add_argument("--iter_slot", type=int, default=3, help="Num of iteration for slots.")
+parser.add_argument("--iter_intent", type=int, default=3, help="Num of iteration for intents.")
 
 # Training Environment
 parser.add_argument("--optimizer", type=str, default='rmsprop', help="Optimizer.")
@@ -50,7 +50,7 @@ parser.add_argument("--bert_ip", type=str, default='', help="provide bert-server
 
 #Embedding
 parser.add_argument("--use_embedding", type=str, default='1', help="""use pre-trained embedding""")
-parser.add_argument("--embedding_path", type=str, default='../../nqg/glove.840B.300d.txt')
+parser.add_argument("--embedding_path", type=str, default='')
 
 # Model and Data
 parser.add_argument("--dataset", type=str, default='atis', help="""Type 'snips' to use dataset provided by us or enter what ever you named your own dataset.
@@ -62,14 +62,14 @@ parser.add_argument("--test_data_path", type=str, default='test', help="Path to 
 parser.add_argument("--valid_data_path", type=str, default='valid', help="Path to validation data files.")
 
 ##
-parser.add_argument("--input_file", type=str, default='seq.in', help="Input file name.")
+parser.add_argument("--input_file", type=str, default='seq.in.new', help="Input file name.")
 parser.add_argument("--slot_file", type=str, default='seq.out', help="Slot file name.")
 parser.add_argument("--intent_file", type=str, default='label', help="Intent file name.")
 
 #Unk
-parser.add_argument("--use_unk", type=bool, default=False, help="to decide whether to use unk-enhanced data")
-parser.add_argument("--unk_ratio", type=float, default=0.25, help="unk_enhanced ratio")
-parser.add_argument("--unk_threshold", type=int, default=20, help="unk_enhanced threshold")
+parser.add_argument("--use_unk", type=bool, default=True, help="to decide whether to use unk-enhanced data")
+parser.add_argument("--unk_ratio", type=float, default=0.15, help="unk_enhanced ratio")
+parser.add_argument("--unk_threshold", type=int, default=5, help="unk_enhanced threshold")
 parser.add_argument("--unk_priority", type=str, default='entity', help="unk_enhanced priority. Only the following three options are available: full, entity, outside")
 
 
@@ -132,7 +132,7 @@ intent_dim = arg.intent_dim
 
 # Create training model
 def build_model(input_data, input_size, sequence_length, slot_size, intent_size, intent_dim, layer_size, embed_dim,
-                num_rnn=1, isTraining=True, iter_slot=2, iter_intent=2, re_routing=True):
+                num_rnn=1, isTraining=True, iter_slot=3, iter_intent=3, re_routing=True):
     cell_fw_list = tf.contrib.rnn.MultiRNNCell([tf.contrib.rnn.BasicLSTMCell(layer_size) for _ in range(num_rnn)])
     cell_bw_list = tf.contrib.rnn.MultiRNNCell([tf.contrib.rnn.BasicLSTMCell(layer_size) for _ in range(num_rnn)])
 
@@ -233,7 +233,7 @@ slot_params = []
 for p in params:
     if 'slot' in p.name or 'embedding' in p.name:
         slot_params.append(p)
-intent_params = []
+intent_params = tf.trainable_variables()
 for p in params:
     if 'intent' in p.name:
         intent_params.append(p)

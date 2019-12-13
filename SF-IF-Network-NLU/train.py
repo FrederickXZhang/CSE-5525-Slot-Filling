@@ -26,7 +26,7 @@ parser.add_argument("--cell", type=str, default='lstm', help="""rnn cell""")
 parser.add_argument("--iteration_num", type=int, default=1, help="""the number of iteration times""")
 parser.add_argument("--batch_size", type=int, default=16, help="Batch size.")
 parser.add_argument("--batch_size_add", type=int, default=4, help="Batch size add.")
-parser.add_argument("--max_epochs", type=int, default=100, help="Max epochs to train.")
+parser.add_argument("--max_epochs", type=int, default=200, help="Max epochs to train.")
 parser.add_argument("--no_early_stop", action='store_false', dest='early_stop',
                     help="Disable early stop, which is based on sentence level accuracy.")
 parser.add_argument("--patience", type=int, default=50, help="Patience to wait before stop.")
@@ -42,14 +42,14 @@ parser.add_argument("--train_data_path", type=str, default='train', help="Path t
 parser.add_argument("--test_data_path", type=str, default='test', help="Path to testing data files.")
 parser.add_argument("--valid_data_path", type=str, default='valid', help="Path to validation data files.")
 parser.add_argument("--input_file", type=str, default='seq.in', help="Input file name.")
-parser.add_argument("--slot_file", type=str, default='seq.out', help="Slot file name.")
-parser.add_argument("--intent_file", type=str, default='label', help="Intent file name.")
+parser.add_argument("--slot_file", type=str, default='seq.out.new.tricky', help="Slot file name.")
+parser.add_argument("--intent_file", type=str, default='label.new.tricky', help="Intent file name.")
 parser.add_argument("--embedding_path", type=str, default='', help="embedding array's path.")
 parser.add_argument("--embed_dim", type=int, default=300, help="Embedding dim.", dest='embed_dim')
 parser.add_argument("--use_bert", type=bool, default=False, help="Use BERT embeddings.", dest='use_bert')
 parser.add_argument("--use_unk", type=bool, default=False, help="to decide whether to use unk-enhanced data")
-parser.add_argument("--unk_ratio", type=float, default='', help="unk_enhanced ratio")
-parser.add_argument("--unk_threshold", type=int, default='', help="unk_enhanced threshold")
+parser.add_argument("--unk_ratio", type=float, default=0.0, help="unk_enhanced ratio")
+parser.add_argument("--unk_threshold", type=int, default=0, help="unk_enhanced threshold")
 parser.add_argument("--unk_priority", type=str, default='', help="unk_enhanced priority. Only the following three options are available: full, entity, outside")
 parser.add_argument("--intent_guide_slot", type=bool, default=False, help="decide whether to use predicted intent to help guide the prediction of slot prediction")
 parser.add_argument("--bert_ip", type=str, default='', help="provide bert-server ip for bert client")
@@ -61,7 +61,7 @@ if arg.embedding_path == "" and arg.use_unk == False:
     arg.embed_dim = 64
 elif arg.use_bert == True:
     arg.embed_dim = 1024
-    
+
 
 if arg.dataset == 'atis':
     arg.model_type = 'intent_only'
